@@ -1,0 +1,99 @@
+{
+    "version": "0.2.0",
+    "options":{
+        "env":{
+                // "andes.root":"C:\\Andestech\\AndeSight_RDS_v312",
+            "andes.root":"C:\\Andestech\\AndeSight_RDS_v323",
+            // "andes.root":"C:\\Andestech\\AndeSight300RDS",
+            
+            "andes.utils":"${config:andes.root}\\utils",
+            "andes.ice":"${config:andes.root}\\ice",
+            "andes.cygwin":"${config:andes.root}\\cygwin\\bin",
+            "andes.cygwin_lib":"${config:andes.root}\\cygwin\\bin\\lib",
+            "andes.nds32gcc": "${config:andes.root}\\toolchains\\nds32le-elf-mculib-v3s\\bin",
+            "PATH": "${config:andes.cygwin};${config:andes.utils};${command:python.interpreterPath};${config:andes.nds32gcc};%PATH%:${env:PATH}",
+        }
+    },
+    "tasks": [
+        {
+            "label": "iceman_dbg_x",
+            "type": "shell",
+            "command": "ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -p 9902 -A -N reset-hold-script.tpl",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "options": {
+                "cwd": "${config:andes.ice}"
+            },
+            "isBackground": true,
+        },
+    ],
+    "configurations": [
+
+        {
+            "name": "(gdb) target",
+            "type": "cppdbg",//node, cppvsdbg, cppdbg
+            "request": "launch",
+
+            "environment": [
+                {
+                    // 设置PATH环境变量
+                    "name": "PATH",
+                    // 值可以使用其他变量
+                    // ${env:PATH}表示当前系统的PATH值
+                    // ${workspaceFolder}表示当前工作目录
+                    // "value": "${config:andes.cygwin};${config:andes.cygwin_lib};${config:andes.utils};${config:andes.nds32gcc};%PATH%:${env:PATH}"
+                    "value": "${config:andes.cygwin}"
+                },
+                {
+                    // 设置PATH环境变量
+                    "name": "LD_LIBRARY_PATH",
+                    // 值可以使用其他变量
+                    // ${env:PATH}表示当前系统的PATH值
+                    // ${workspaceFolder}表示当前工作目录
+                    // "value": "${config:andes.cygwin}"
+                    "value": "${env:PATH}"
+                },
+            ],
+            
+
+            // "preLaunchTask": "test_xml",
+            // "program": "$ (cygpath.exe -u '${workspaceFolder}\\cmake_build\\roboeffect_demo.adx')",
+            // "program": "${workspaceFolder}\\\\cmake_build\\\\roboeffect_demo.adx",
+            "program": "/cygdrive/d/castle_work/du360/DU56x/v3_engine_codes/codes/roboeffect_svn_20230427/cmake_build/roboeffect_demo.adx",
+            
+            "args": [],
+            "stopAtEntry": true,
+            "miDebuggerServerAddress": ":9902",
+            
+            // "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,//true
+            "MIMode": "gdb",
+            "miDebuggerPath": "${config:andes.root}\\toolchains\\nds32le-elf-mculib-v3s\\bin\\nds32le-elf-gdb.exe",
+
+            "sourceFileMap": {
+                "/cygdrive/c/": "C:/",
+                "/cygdrive/d/": "D:/",
+                "/cygdrive/e/": "E:/",
+            },
+            // "preLaunchTask" : "C/C++: make -k",
+            "setupCommands": [
+                {
+                    "description": "gdb print",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                },
+                // {
+                //     "description": "gdb reset",
+                //     "text": "-exec targetreset",
+                //     "ignoreFailures": false
+                // },
+            ],
+            // "preLaunchTask": "${config:andes.root}\\toolchains\\nds32le-elf-mculib-v3s\\bin\\nds32le-elf-gdb.exe -v"
+
+        },
+    ],
+}

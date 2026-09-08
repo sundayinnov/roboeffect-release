@@ -1,0 +1,130 @@
+
+[INFO ] 26/09/08-08:28:02:002 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/08-08:28:05:005 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/08-08:28:05:005 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-08:28:09:009 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[ERROR] 26/09/08-08:28:39:039 - Log4A.logError(Log4A.java:52) 
+[main]: Run [D:\ANDES\utils\nds_ldsag.exe, -t, D:\ANDES\utils\nds32_template.txt, -o, D:\MV_SOLUTION_AP82\roboeffect-release-master\roboeffect-release-master\nds32-ae210p.ld, D:\MV_SOLUTION_AP82\roboeffect-release-master\roboeffect-release-master\nds32-ae210p.sag], PATH=;D:\ANDES\cygwin\bin;D:\ANDES\utils;D:\ANDES\COPILOT\bin;D:\ANDES\COPILOT\host-tools;D:\ANDES\toolchains\python\bin;D:/ANDES/ide//../jre_64/bin/server;D:/ANDES/ide//../jre_64/bin;D:/ANDES/ide//../jre_64/lib/amd64;C:\Program Files\VanDyke Software\Clients\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Recovery\OEM\Backup\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\MATLAB\R2025a\runtime\win64;D:\MATLAB\R2025a\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;E:\Git\cmd;C:\Users\Sunday Gong\.local\bin;C:\Users\Sunday Gong\AppData\Local\Microsoft\WindowsApps;C:\Users\Sunday Gong\AppData\Local\Programs\Microsoft VS Code\bin;C:\WINDOWS\System32\Wbem;D:\ANDES\ide;
+
+[ERROR] 26/09/08-08:28:39:039 - Log4A.logError(Log4A.java:52) 
+[main]: [nds_ldsag] error message:
+
+
+[ERROR] 26/09/08-08:28:39:039 - Log4A.logError(Log4A.java:52) 
+[main]: [nds_ldsag] output message:
+Parse template done.
+The output file is placed "D:\MV_SOLUTION_AP82\roboeffect-release-master\roboeffect-release-master\nds32-ae210p.ld"
+
+
+[INFO ] 26/09/08-08:31:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-08:31:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-08:31:27:027 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/08-08:54:25:025 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/08-08:54:31:031 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/08-08:54:31:031 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-08:54:31:031 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-08:55:58:058 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-08:55:58:058 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-08:56:24:024 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/08-08:59:25:025 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/08-09:20:25:025 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/08-09:34:57:057 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/08-13:18:14:014 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/08-13:18:21:021 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/08-13:18:22:022 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:107) 
+[Process InputStream Console Thread]: retry: 1
+
+[INFO ] 26/09/08-13:18:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:119) 
+[Process InputStream Console Thread]: telnetClient.connect:  DESKTOP-FAAJCDC/192.168.43.148 : 9,901
+
+[INFO ] 26/09/08-13:18:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/08-13:18:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-13:18:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/08-13:18:53:053 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/08-14:51:10:010 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license

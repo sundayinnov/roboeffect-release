@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/workspace/PATH/delimiter=;
+environment/workspace/PATH/operation=prepend
+environment/workspace/PATH/value=D\:\\ANDES\\cygwin\\bin;${PATH}
+environment/workspace/append=true
+environment/workspace/appendContributed=true

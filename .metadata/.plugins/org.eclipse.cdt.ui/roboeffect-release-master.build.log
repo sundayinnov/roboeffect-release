@@ -1,0 +1,324 @@
+13:18:03 **** Incremental Build of configuration Debug for project roboeffect-release-master ****
+make -j16 all 
+/usr/bin/make --no-print-directory pre-build
+../tools/adapt_files_gen.py -i ../middleware/roboeffect/graphics/ -o ../main/ && ../tools/v3_params_func_gen.exe -e ../tools/params_msg_mapping.xlsx -p ../ -b ../middleware/roboeffect/roboeffect_lib/roboeffect_library_info.bin -o ../main/ -w
+user_effect_flow_demo.c
+Effect Control Code Generator, ver=v2.8, table_ver=0.2.0
+BIN file: ../middleware/roboeffect/roboeffect_lib/roboeffect_library_info.bin.
+Output: ../main/.
+make[1]: [makefile:133: pre-build] Error 1 (ignored)
+ 
+/usr/bin/make --no-print-directory main-build
+Building file: ../main/communication.c
+Building file: ../main/flashbin_utils.c
+Building file: ../main/main.c
+Invoking: Andes C Compiler
+nds32le-elf-gcc -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/fatfs/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect/simple_gain" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/graphics" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib/wraps" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc/otg" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/main" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/user" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/audio/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/mv_utils/inc" -O3 -mcmodel=medium -g3 -Wall -mcpu=d1088-spu -ffunction-sections -fdata-sections -c -fmessage-length=0 -mext-dsp -mext-zol -ldsp -std=gnu99 -MMD -MP -MF"main/communication.d" -MT"main/communication.d main/communication.o" -o "main/communication.o" "../main/communication.c"
+Invoking: Andes C Compiler
+nds32le-elf-gcc -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/fatfs/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect/simple_gain" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/graphics" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib/wraps" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc/otg" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/main" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/user" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/audio/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/mv_utils/inc" -O3 -mcmodel=medium -g3 -Wall -mcpu=d1088-spu -ffunction-sections -fdata-sections -c -fmessage-length=0 -mext-dsp -mext-zol -ldsp -std=gnu99 -MMD -MP -MF"main/flashbin_utils.d" -MT"main/flashbin_utils.d main/flashbin_utils.o" -o "main/flashbin_utils.o" "../main/flashbin_utils.c"
+Invoking: Andes C Compiler
+nds32le-elf-gcc -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/fatfs/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect/simple_gain" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/graphics" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib/wraps" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc/otg" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/main" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/user" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/audio/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/mv_utils/inc" -O3 -mcmodel=medium -g3 -Wall -mcpu=d1088-spu -ffunction-sections -fdata-sections -c -fmessage-length=0 -mext-dsp -mext-zol -ldsp -std=gnu99 -MMD -MP -MF"main/main.d" -MT"main/main.d main/main.o" -o "main/main.o" "../main/main.c"
+Building file: ../main/roboeffect_adapt.c
+Invoking: Andes C Compiler
+nds32le-elf-gcc -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/fatfs/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect/simple_gain" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/third_party_effect" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/graphics" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib/wraps" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver_api/inc/otg" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/main" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/user" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/audio/inc" -I"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/mv_utils/inc" -O3 -mcmodel=medium -g3 -Wall -mcpu=d1088-spu -ffunction-sections -fdata-sections -c -fmessage-length=0 -mext-dsp -mext-zol -ldsp -std=gnu99 -MMD -MP -MF"main/roboeffect_adapt.d" -MT"main/roboeffect_adapt.d main/roboeffect_adapt.o" -o "main/roboeffect_adapt.o" "../main/roboeffect_adapt.c"
+../main/flashbin_utils.c: In function 'roboeffect_effect_enquiry_stream':
+../main/flashbin_utils.c:88:10: warning: pointer targets in passing argument 1 of 'strcpy' differ in signedness [-Wpointer-sign]
+   strcpy(&temp[14], graph_name);
+          ^
+In file included from /cygdrive/d/ANDES/toolchains/nds32le-elf-mculib-v3s/nds32le-elf/sys-include/stdlib.h:11:0,
+                 from ../main/flashbin_utils.c:13:
+/cygdrive/d/ANDES/toolchains/nds32le-elf-mculib-v3s/nds32le-elf/sys-include/string.h:30:8: note: expected 'char * restrict' but argument is of type 'uint8_t *'
+ char  *_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+        ^
+../main/communication.c: In function 'Comm_Form_Rsp_VER_0x00':
+../main/communication.c:314:5: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+  pp = &buffer[15];
+     ^
+../main/communication.c:280:13: warning: unused variable 'qq' [-Wunused-variable]
+  char *pp, *qq;
+             ^
+../main/communication.c: In function 'Communication_Effect_0x01':
+../main/communication.c:410:11: warning: unused variable 'pp' [-Wunused-variable]
+  int16_t *pp, i;
+           ^
+../main/communication.c: In function 'roboeffect_effect_update_params_entrance':
+../main/communication.c:645:24: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+  ROBOEFFECT_ERROR_CODE ret;
+                        ^
+../main/communication.c:644:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+../main/communication.c: In function 'Comm_PGA0_0x03':
+../main/communication.c:1578:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x03':
+../main/communication.c:1809:12: warning: unused variable 'pp' [-Wunused-variable]
+   int16_t *pp;
+            ^
+../main/communication.c:1805:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c:1804:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Comm_ADC0_0x04':
+../main/communication.c:1840:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x04':
+../main/communication.c:1955:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_AGC0_0x05':
+../main/communication.c:1991:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x05':
+../main/communication.c:2115:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_PGA1_0x06':
+../main/communication.c:2151:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x06':
+../main/communication.c:2360:12: warning: unused variable 'pp' [-Wunused-variable]
+   int16_t *pp;
+            ^
+../main/communication.c:2356:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c:2355:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Comm_ADC1_0x07':
+../main/communication.c:2396:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x07':
+../main/communication.c:2510:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_AGC1_0x08':
+../main/communication.c:2542:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x08':
+../main/communication.c:2667:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_DAC0_0x09':
+../main/communication.c:2705:14: warning: unused variable 'TmpData' [-Wunused-variable]
+     uint32_t TmpData;
+              ^
+../main/communication.c: In function 'Communication_Effect_0x09':
+../main/communication.c:2861:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_DAC1_0x0A':
+../main/communication.c:2894:14: warning: unused variable 'TmpData' [-Wunused-variable]
+     uint32_t TmpData;
+              ^
+../main/communication.c: In function 'Communication_Effect_0x0A':
+../main/communication.c:3044:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_I2S0_0x0B':
+../main/communication.c:3078:14: warning: unused variable 'TmpData' [-Wunused-variable]
+     uint32_t TmpData;
+              ^
+../main/communication.c: In function 'Communication_Effect_0x0B':
+../main/communication.c:3205:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_I2S1_0x0C':
+../main/communication.c:3240:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x0C':
+../main/communication.c:3375:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c: In function 'Comm_SPDIF_0x0D':
+../main/communication.c:3410:11: warning: unused variable 'TmpData' [-Wunused-variable]
+  uint32_t TmpData;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x0D':
+../main/communication.c:3464:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c:3464:11: warning: unused variable 'i' [-Wunused-variable]
+  uint16_t i,k;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x0E':
+../main/communication.c:3542:13: warning: unused variable 'k' [-Wunused-variable]
+  uint16_t i,k;
+             ^
+../main/communication.c:3542:11: warning: unused variable 'i' [-Wunused-variable]
+  uint16_t i,k;
+           ^
+../main/communication.c: In function 'Communication_Effect_0x12':
+../main/communication.c:3629:11: warning: unused variable 'pp' [-Wunused-variable]
+  int16_t *pp;
+           ^
+../main/communication.c: In function 'Communication_Effect_0xfe':
+../main/communication.c:3669:15: warning: unused variable 'i' [-Wunused-variable]
+  int32_t ret, i;
+               ^
+../main/communication.c:3669:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret, i;
+          ^
+../main/communication.c: In function 'Communication_Effect_0xff':
+../main/communication.c:3689:15: warning: unused variable 'i' [-Wunused-variable]
+  int32_t ret, i;
+               ^
+../main/communication.c:3689:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret, i;
+          ^
+../main/communication.c: In function 'Comm_Form_Rsp_USERDATA_0xFC':
+../main/communication.c:3739:11: warning: unused variable 'ChipID' [-Wunused-variable]
+  uint64_t ChipID;
+           ^
+../main/communication.c:3738:7: warning: unused variable 'chip_id_str' [-Wunused-variable]
+  char chip_id_str[16] = {0};
+       ^
+../main/communication.c: In function 'Communication_Effect_0xFB':
+../main/communication.c:3819:61: warning: pointer targets in passing argument 3 of 'roboeffect_get_effect_size' differ in signedness [-Wpointer-sign]
+   ret = roboeffect_get_effect_size(context_memory, addr[i], &t_size);
+                                                             ^
+In file included from ../main/communication.c:32:0:
+/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib/roboeffect_api.h:574:23: note: expected 'uint32_t *' but argument is of type 'int32_t *'
+ ROBOEFFECT_ERROR_CODE roboeffect_get_effect_size(void *context, uint8_t address, uint32_t *context_size);
+                       ^
+../main/communication.c:3805:10: warning: unused variable 'rsp_byte' [-Wunused-variable]
+  uint8_t rsp_byte = 0xfc;
+          ^
+../main/communication.c: In function 'iic_data_entry':
+../main/communication.c:4128:13: warning: unused variable 'i' [-Wunused-variable]
+  int ssize, i;
+             ^
+../main/main.c: In function 'aec_and_fifo_init':
+../main/main.c:267:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+         DBG("NS init failed: %d\n", ret_ns);
+         ^
+../main/main.c:267:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+../main/main.c: In function 'demo_patameter_configure':
+../main/main.c:319:17: warning: unused variable 'param0' [-Wunused-variable]
+  static int16_t param0 = 0;
+                 ^
+../main/main.c:318:14: warning: unused variable 'enable' [-Wunused-variable]
+  static bool enable = TRUE;
+              ^
+../main/main.c: In function 'hardware_pipe_reset':
+../main/main.c:572:2: warning: implicit declaration of function 'RST_I2SModule' [-Wimplicit-function-declaration]
+  RST_I2SModule(I2S0_MODULE);
+  ^
+../main/main.c:645:7: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+       DBG("SINK_I2S0_TX opened: buffer=%d bytes, threshold=%d\n", dma_buffer_bytes, threshold);
+       ^
+../main/main.c:645:7: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' [-Wformat=]
+../main/main.c:645:7: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+../main/main.c:645:7: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' [-Wformat=]
+../main/main.c: In function 'play_audio_data':
+../main/main.c:888:11: warning: unused variable 'size' [-Wunused-variable]
+  uint32_t size;
+           ^
+../main/main.c: In function 'main':
+../main/main.c:1072:2: warning: implicit declaration of function 'ChipInitTrigTypeSet' [-Wimplicit-function-declaration]
+  ChipInitTrigTypeSet(0x60);
+  ^
+../main/main.c:1280:3: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+   DBG("current memory: %d\n", roboeffect_size);
+   ^
+../main/main.c:1280:3: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+../main/main.c:1299:2: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+  DBG("Heap free space: %d\n", roboeffect_size_max);
+  ^
+../main/main.c:1299:2: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' [-Wformat=]
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+  DBG("frame size = %d, free = %d, sr = %d\n", frame_size, roboeffect_get_free_memory_space(context_memory), g_user_effect_list->sample_rate);
+  ^
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' [-Wformat=]
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' [-Wformat=]
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' [-Wformat=]
+../main/main.c:1324:2: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' [-Wformat=]
+../main/main.c:1503:23: warning: pointer targets in passing argument 1 of 'UART0_RecvByte' differ in signedness [-Wpointer-sign]
+     if(UART0_RecvByte(&c))
+                       ^
+In file included from ../main/main.c:21:0:
+/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver/inc/uarts.h:173:6: note: expected 'uint8_t *' but argument is of type 'char *'
+ bool UART0_RecvByte(uint8_t* Val);
+      ^
+../main/main.c:1046:11: warning: unused variable 'temp_data' [-Wunused-variable]
+  uint32_t temp_data = 0, frame_size;
+           ^
+../main/main.c:1045:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret;
+          ^
+../main/main.c: At top level:
+../main/main.c:101:17: warning: 'PcmBuf2' defined but not used [-Wunused-variable]
+ static uint32_t PcmBuf2[512] = {0};
+                 ^
+../main/main.c:102:16: warning: 'AecBuf1' defined but not used [-Wunused-variable]
+ static int16_t AecBuf1[512] = {0};
+                ^
+../main/main.c:103:16: warning: 'AecBuf2' defined but not used [-Wunused-variable]
+ static int16_t AecBuf2[512] = {0};
+                ^
+../main/main.c:104:16: warning: 'AecBuf3' defined but not used [-Wunused-variable]
+ static int16_t AecBuf3[512] = {0};
+                ^
+../main/main.c:144:16: warning: 'tmp_48k' defined but not used [-Wunused-variable]
+ static int16_t tmp_48k[EFFECT_FRAME_SIZE_48K];
+                ^
+../main/main.c:146:16: warning: 'stereo_16bit' defined but not used [-Wunused-variable]
+ static int16_t stereo_16bit[EFFECT_FRAME_SIZE_48K * 2];
+                ^
+../main/main.c:274:13: warning: 'led_init' defined but not used [-Wunused-function]
+ static void led_init(void)
+             ^
+../main/main.c:290:13: warning: 'led_play' defined but not used [-Wunused-function]
+ static void led_play(void)
+             ^
+../main/main.c:788:13: warning: 'agc_config' defined but not used [-Wunused-function]
+ static void agc_config(void)
+             ^
+../main/main.c:886:13: warning: 'play_audio_data' defined but not used [-Wunused-function]
+ static void play_audio_data(uint8_t *data, uint32_t length)
+             ^
+Finished building: ../main/roboeffect_adapt.c
+Finished building: ../main/flashbin_utils.c
+ 
+ 
+Finished building: ../main/main.c
+ 
+Finished building: ../main/communication.c
+ 
+Building target: roboeffect-release-master.adx
+Invoking: Andes C Linker
+nds32le-elf-gcc -O3 -nostartfiles -static -L"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/audio" -L"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/middleware/roboeffect/roboeffect_lib" -L"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/driver/driver" -mcmodel=medium -T"/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/roboeffect-release-master/nds32-ae210p.ld" -Wl,--gc-sections -mvh -mext-dsp -mext-zol -ldsp -o "roboeffect-release-master.adx"  ./driver/driver_api/src/adc_interface.o ./driver/driver_api/src/dac_interface.o ./driver/driver_api/src/fft_api.o ./driver/driver_api/src/i2c_host.o ./driver/driver_api/src/i2c_interface.o ./driver/driver_api/src/i2s_interface.o ./driver/driver_api/src/sadc_interface.o ./driver/driver_api/src/sd_card.o ./driver/driver_api/src/sw_uart.o ./driver/driver_api/src/uarts_interface.o  ./driver/driver_api/src/otg/device/otg_device_standard_request.o ./driver/driver_api/src/otg/device/otg_device_stor.o  ./main/adc_key.o ./main/audio_data.o ./main/auto_gen_msg_process.o ./main/communication.o ./main/flash_boot.o ./main/flashbin_utils.o ./main/heap.o ./main/main.o ./main/otg_device_audio.o ./main/roboeffect_adapt.o ./main/roboeffect_prot.o ./main/wav_io.o  ./middleware/audio/src/audio_decoder_api.o ./middleware/audio/src/mvstdio.o  ./middleware/fatfs/src/diskio.o ./middleware/fatfs/src/ff.o ./middleware/fatfs/src/ffpresearch.o ./middleware/fatfs/src/ffsystem.o ./middleware/fatfs/src/ffunicode.o  ./middleware/mv_utils/src/mcu_circular_buf.o  ./middleware/roboeffect/graphics/user_effect_flow_demo.o  ./middleware/roboeffect/roboeffect_lib/roboeffect_api.o  ./middleware/roboeffect/roboeffect_lib/wraps/motor_api.o ./middleware/roboeffect/roboeffect_lib/wraps/motor_data.o ./middleware/roboeffect/roboeffect_lib/wraps/motor_wrap.o  ./middleware/roboeffect/third_party_effect/simple_gain/simple_gain.o  ./startup/crt0.o ./startup/init-default.o ./startup/interrupt.o ./startup/retarget.o   -lDriver -lRoboeffect -lbeamforming -lresampler -lAudioEffectLibrary -lAudioDecoderLibrary -lVocalCut -ldsp -lm
+Finished building target: roboeffect-release-master.adx
+ 
+Invoking: NM (symbol listing)
+nds32le-elf-nm -n -l -C "roboeffect-release-master.adx" > output/symbol.txt
+Invoking: Readelf (ELF info listing)
+nds32le-elf-readelf -a "roboeffect-release-master.adx" > output/readelf.txt
+Invoking: Objcopy (object content copy)
+nds32le-elf-objcopy -S -O binary "roboeffect-release-master.adx" output/roboeffect-release-master.bin
+Invoking: Size (section size listing)
+nds32le-elf-size  "roboeffect-release-master.adx" | tee output/.PHONY.size
+Finished building: output/roboeffect-release-master.bin
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+ 603046 (398318 + 204728)	   1352	  90792	 695190	  a9b96	roboeffect-release-master.adx
+Finished building: output/readelf.txt
+ 
+Finished building: output/symbol.txt
+Finished building: output/.PHONY.size
+ 
+ 
+ 
+
+13:18:05 Build Finished (took 2s.126ms)
+

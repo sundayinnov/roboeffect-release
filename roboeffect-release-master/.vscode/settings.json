@@ -1,0 +1,28 @@
+{
+    "python.pythonPath": "C:\\Python\\Python310\\python.exe",
+    // "python.pythonPath": "C:\\Users\\castle\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+    // "andes.root":"C:\\Andestech\\AndeSight_RDS_v312",
+    "andes.root": "C:\\Andestech\\AndeSight_RDS_v323",
+    // "andes.root":"C:\\Andestech\\AndeSight300RDS",
+    "andes.utils": "${config:andes.root}\\utils",
+    "andes.ice": "${config:andes.root}\\ice",
+    "andes.cygwin": "${config:andes.root}\\cygwin\\bin",
+    "andes.cygwin_lib": "${config:andes.root}\\cygwin\\bin\\lib",
+    "andes.nds32gcc": "${config:andes.root}\\toolchains\\nds32le-elf-mculib-v3s\\bin",
+    "files.associations": {
+        "spdif_func.h": "c",
+        "spdif.h": "c",
+        "audio_effect_library.h": "c",
+        "user_config.h": "c",
+        "type.h": "c",
+        "stdio.h": "c",
+        "vocalcut.h": "c",
+        "nds32_intrinsic.h": "c",
+        "roboeffect_api.h": "c",
+        "roboeffect_adapt.h": "c",
+        "roboeffect_config.h": "c",
+        "engine_mm.h": "c"
+    },
+
+	 "cmake.configureOnEdit": false
+}

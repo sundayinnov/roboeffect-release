@@ -1,0 +1,390 @@
+// tasks_andes.json:
+
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+
+    "options":{
+        "env":{
+            "PATH": "${config:andes.cygwin};${config:andes.utils};${config:python.pythonPath};${config:andes.nds32gcc};%PATH%:${env:PATH}",
+            "robo_root": "${workspaceFolder}\\middleware\\roboeffect\\",
+            "robo_lib": "${workspaceFolder}\\middleware\\roboeffect\\roboeffect_lib",
+            "robo_3rd_party": "${workspaceFolder}\\middleware\\roboeffect\\third_party_effect",
+        }
+    },
+
+    "tasks": [
+        {
+            "label": "pre-build",
+            "type": "shell",
+            "command": "nds_ldsag.exe -t ${config:andes.utils}\\nds32_template.txt ${workspaceFolder}\\nds32-ae210p-cm.sag -o ${workspaceFolder}\\nds32-ae210p.ld",
+            // "command": "echo nothing to do",
+            "problemMatcher": [],
+        },
+        {
+            "label": "run_excel",
+            "type": "shell",
+            // "command": "python.exe ${workspaceFolder}\\tools\\effect_lib_data_gen_xml_2.0.py -x ${workspaceFolder}\\AudioEffectLibsData.xml -f ${workspaceFolder}\\middleware\\roboeffect\\",
+            "command": "python.exe ${workspaceFolder}\\tools\\effect_lib_data_gen_excel_1.0.py -x ${workspaceFolder}\\AudioEffectLibsData.xlsx -f ${workspaceFolder}\\middleware\\roboeffect\\roboeffect_lib\\ ",
+            // "command": "echo castle",
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "run_markdown",
+            "type": "shell",
+            "command": "python.exe ${workspaceFolder}\\tools\\effect_lib_data_to_md_1.0.py -x ${workspaceFolder}\\AudioEffectLibsData.xlsx -f ${workspaceFolder}\\documents\\ -e ${workspaceFolder}\\middleware\\audio\\inc\\",
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "run-xml",
+            "type": "shell",
+            "command": "python.exe ${workspaceFolder}\\tools\\effect_lib_data_gen_xml_2.0.py -x ${workspaceFolder}\\AudioEffectLibsData.xml -f ${workspaceFolder}\\middleware\\roboeffect\\",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+
+        {
+            "label": "run-adapt-gen",
+            "type": "shell",
+            "command": "python.exe ${workspaceFolder}\\tools\\adapt_files_gen.py -i ${workspaceFolder}\\middleware\\roboeffect\\graphics\\ -o ${workspaceFolder}\\main\\",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "auto_param_proc",
+            "type": "shell",
+            "command": "${workspaceFolder}\\tools\\v3_params_func_gen.exe -e ${workspaceFolder}\\tools\\params_msg_mapping.xlsx -p .\\ -b middleware\\roboeffect\\roboeffect_lib\\roboeffect_library_info.bin -o ${workspaceFolder}\\main\\ -w",
+            // "command": "echo nothing to do",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "generate_makefiles",
+            "type": "shell",
+            // "command": "python.exe ${workspaceFolder}\\tools\\makefile_gen.py -i ${workspaceFolder}\\makefile.ini -d ${workspaceFolder}",
+            "command": "mkdir cmake_build && cd cmake_build && cmake ..",
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "pre-build",
+                "run-adapt-gen",
+                //"auto_param_proc"
+                //"run-xml",
+            ]
+        },
+        {
+            "label": "make_demo",
+            "type": "shell",
+            "command": "stdbuf -oL make all -C ${workspaceFolder}\\cmake_build -j 8 2>&1 | tee ${workspaceFolder}\\cmake_build\\log.log & ${workspaceFolder}\\tools\\gcc_error_msg.py ${workspaceFolder}\\cmake_build\\log.log -w",
+            "args": [
+            ],
+            "problemMatcher": {
+                "base": "$gcc",
+                //"fileLocation": ["relative", "${input:build_dir}"],
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "clean_project",
+                "third_party_crc",
+                "generate_makefiles",
+            ]
+        },
+        {
+            "label": "clean_project",
+            "type": "shell",
+            "command": "rm -rf ",
+            "args": [
+                "${workspaceFolder}\\cmake_build",
+            ],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "problemMatcher": [ ],
+        },
+        {
+            "label": "remake demo",
+            "type": "shell",
+            "command": "stdbuf -oL make all -C ${workspaceFolder}\\cmake_build -j 8 2>&1 | tee ${workspaceFolder}\\cmake_build\\log.log & ${workspaceFolder}\\tools\\gcc_error_msg.py ${workspaceFolder}\\cmake_build\\log.log -w",
+            "args": [
+            ],
+            "problemMatcher": {
+                "base": "$gcc",
+                //"fileLocation": ["relative", "${input:build_dir}"],
+            },
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "iceman",
+            "type": "shell",
+            "command": "ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -p 9902 -A -N reset-hold-script.tpl",
+            // "command": "ICEman.exe -b 9944 -t 6666 -p 9901 -A -N reset-hold-script.tpl -H",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "options": {
+                "cwd": "${config:andes.ice}"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "iceman_dbg",
+            "type": "shell",
+            "command": "ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -p 9902 -A -N reset-hold-script.tpl",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "options": {
+                "cwd": "${config:andes.ice}"
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "burn_advanced",
+            "type": "shell",
+            "command": "${workspaceFolder}\\tools\\o26_download_v1.8-4k-crc.exe --image ${workspaceFolder}\\cmake_build\\roboeffect_demo.bin --addr 0x0 ${input:need_verify} ${input:need_erase_all} --port 9900",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "burn_fast",
+            "type": "shell",
+            "command": "${workspaceFolder}\\tools\\o26_download_v1.8-4k-crc.exe --image ${workspaceFolder}\\cmake_build\\roboeffect_demo.bin --addr 0x0 --port 9900",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+        },
+        {
+            "label": "burn_fast_auto_iceman",
+            "type": "shell",
+            "command": "echo start burning...",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            // "dependsOrder": "sequence",
+            "dependsOn":[
+                "iceman",
+                "burn_fast",
+            ]
+        },
+        {
+            "label": "burn_adv_auto_iceman",
+            "type": "shell",
+            "command": "echo start burning...",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            // "dependsOrder": "sequence",
+            "dependsOn":[
+                "iceman",
+                "burn_advanced",
+            ]
+        },
+
+        {
+            "label": "clean_release",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}\\release && mkdir ${workspaceFolder}\\release",
+            "args": [
+                "",
+            ],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "problemMatcher": [ ],
+        },
+        {
+            "label": "mva_md5",
+            "type": "shell",
+            "command": "python.exe ${workspaceFolder}\\tools\\mva_maker.py -i ${workspaceFolder}\\cmake_build\\roboeffect_demo.bin -o ${workspaceFolder}\\cmake_build\\roboeffect_demo.mva && python.exe ${workspaceFolder}\\tools\\check_md5.py -d ${workspaceFolder}\\cmake_build",
+            // "command": "",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "clean_release",
+            ]
+        },
+
+        {
+            "label": "generate_makefiles_lib",
+            "type": "shell",
+            "command": "python.exe ${workspaceFolder}\\tools\\makefile_gen_lib.py -i ${workspaceFolder}\\makefile_lib.ini -d ${workspaceFolder} && rm -f middleware\\roboeffect\\inc\\roboeffect_api.h",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+            ]
+        },
+        {
+            "label": "third_party_crc",
+            "type": "shell",
+            "command": "cp -f %robo_lib%\\roboeffect_library_info.bin  %robo_3rd_party%\\roboeffect_library_info.bin && %robo_3rd_party%\\third_party_effects_data_gen.exe -p %robo_3rd_party%",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+            ]
+        },
+        {
+            "label": "copy roboeffect lib output",
+            "type": "shell",
+            "command": "cp -f roboeffect_lib\\inc\\roboeffect_api.h middleware\\roboeffect\\roboeffect_lib\\roboeffect_api.h && cp -f ${workspaceFolder}\\make_robo\\libRoboeffect.a ${workspaceFolder}\\middleware\\roboeffect\\roboeffect_lib\\libRoboeffect.a",
+            "problemMatcher": [],
+        },
+        {
+            "label": "make_lib",
+            "type": "shell",
+            "command": "stdbuf -oL make all -C ${workspaceFolder}\\make_robo -j 8 2>&1 | tee ${workspaceFolder}\\cmake_build\\log.log & ${workspaceFolder}\\tools\\gcc_error_msg.py ${workspaceFolder}\\cmake_build\\log.log",
+            "args": [
+            ],
+            "problemMatcher": {
+                "base": "$gcc",
+                //"fileLocation": ["relative", "${input:build_dir}"],
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "generate_makefiles_lib",
+            ]
+        },
+        {
+            "label": "make_lib_plus",
+            "type": "shell",
+            "command": "echo *********make roboeffect libs finished********",
+            "problemMatcher": [],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "make_lib",
+                "copy roboeffect lib output",
+            ]
+        },
+        {
+            "label": "clean_lib",
+            "type": "shell",
+            "command": "rm -rf ",
+            "args": [
+                "${workspaceFolder}\\make_robo",
+            ],
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "problemMatcher": [ ],
+        },
+
+        {
+            "label": "release libs",
+            "type": "shell",
+            "command": "cp -r middleware/roboeffect/* roboeffect_release/roboeffect/ && cp -f release_notes.txt roboeffect_release/release_notes.txt && cp -f documents/roboeffect_user_manual_publish.pdf roboeffect_release/doc/roboeffect_user_manual_publish.pdf ",
+
+
+            "group": { 
+                "kind": "build",
+                "isDefault": true   
+            },
+            "problemMatcher": [ ],
+        },
+    ],
+    
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "need_verify",
+            "description": "should need verify or not after burn",
+            "options": [
+                "",
+                "--verify"
+            ]
+        },
+        {
+            "type": "pickString",
+            "id": "need_erase_all",
+            "description": "should need erase all or not after burn",
+            "options": [
+                "",
+                "--erase-all"
+            ]
+        },
+        {
+            "type": "promptString",
+            "id": "release_ver",
+            "description": "select release ver",
+            "default": "2.32.1",
+        },
+        
+    ]
+}
