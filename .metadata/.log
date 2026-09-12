@@ -1086,3 +1086,2677 @@ java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
 	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
 	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
 	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+!SESSION 2026-09-08 15:02:36.876 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-08 15:02:47.003
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-08 15:02:47.845
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-08 15:02:47.847
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-08 15:02:49.554
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+!SESSION 2026-09-09 08:37:25.274 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-09 08:37:57.665
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-09 08:37:58.774
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-09 08:37:58.777
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 08:38:55.842
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 08:39:08.292
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 08:39:08.293
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 08:39:08.293
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 08:39:08.333
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 08:39:56.417
+!MESSAGE 08:39:36.303 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:08:47.659
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:08:47.659
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:08:47.659
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:08:47.701
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 09:13:17.469
+!MESSAGE 09:11:40.086 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:20:30.453
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:20:30.453
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:20:30.453
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:20:30.492
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 09:28:00.521
+!MESSAGE 09:26:56.519 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:10.045
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:10.045
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:10.045
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:10.087
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 09:45:16.278
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 09:45:16.279
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 09:45:22.388
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 09:45:22.389
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 09:45:28.954
+!MESSAGE 09:45:22.389 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:31.203
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:31.204
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:31.204
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:45:31.246
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 09:58:43.173
+!MESSAGE 09:45:59.400 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:59:27.597
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:59:27.598
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:59:27.598
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 09:59:27.639
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 10:08:56.012
+!MESSAGE 10:08:51.258 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:10:45.270
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:10:45.270
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:10:45.270
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:10:45.309
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 10:45:44.867
+!MESSAGE 10:45:42.483 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:46:12.537
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:46:12.537
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:46:12.538
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:46:12.579
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 10:50:41.214
+!MESSAGE 10:49:34.816 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:52:52.527
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:52:52.528
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:52:52.528
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:52:52.569
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 10:57:23.873
+!MESSAGE 10:57:21.608 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:58:06.347
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:58:06.347
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:58:06.347
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 10:58:06.389
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:02:06.606
+!MESSAGE 10:58:34.519 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:09:19.223
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:09:19.224
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:09:19.224
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:09:19.266
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:09:53.218
+!MESSAGE 11:09:50.932 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:11:11.843
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:11:11.843
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:11:11.843
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:11:11.886
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:17:50.084
+!MESSAGE 11:17:47.701 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:18:12.179
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:18:12.179
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:18:12.179
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:18:12.219
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:20:08.539
+!MESSAGE 11:19:53.168 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:44:46.867
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:44:46.867
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:44:46.867
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:44:46.909
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:51:09.041
+!MESSAGE 11:51:06.789 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:53:50.119
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:53:50.120
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:53:50.120
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 11:53:50.163
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 11:58:41.442
+!MESSAGE 11:58:39.201 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:04:00.064
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:04:00.064
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:04:00.064
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:04:00.108
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 12:51:12.553
+!MESSAGE 12:50:05.549 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:53:31.395
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:53:31.395
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:53:31.395
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 12:53:31.438
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:40:06.137
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:40:11.662
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 13:40:25.554
+!MESSAGE 13:40:05.040 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:50:20.199
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:50:20.199
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:50:20.199
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 13:50:20.250
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 13:58:21.180
+!MESSAGE 13:56:43.005 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 14:49:55.373
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 14:49:55.374
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 14:49:55.374
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 14:49:55.415
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:12:51.147
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:12:56.665
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 15:13:51.830
+!MESSAGE 15:12:48.597 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:16:18.535
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:16:18.536
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:16:18.536
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 15:16:18.582
+!MESSAGE After exec ICEman.
+!SESSION 2026-09-09 18:30:22.256 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-09 18:30:38.973
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-09 18:30:40.757
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-09 18:30:40.767
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:34:33.370
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:34:54.807
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:34:54.808
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:34:54.808
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:34:54.847
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 18:35:27.389
+!MESSAGE 18:35:23.124 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:37:05.496
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:37:05.497
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:37:05.497
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:37:05.537
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 18:38:09.513
+!MESSAGE 18:37:51.374 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:39:40.701
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:39:40.702
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:39:40.702
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 18:39:40.743
+!MESSAGE After exec ICEman.
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-09-09 18:42:11.648
+!MESSAGE Indexed 'Example_I2S' (7 sources, 61 headers) in 0.576 sec: 4,577 declarations; 5,679 references; 0 unresolved inclusions; 0 syntax errors; 4 unresolved names (0.039%)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 19:30:52.184
+!MESSAGE 19:30:17.708 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:33:05.049
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:33:05.050
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:33:05.050
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:33:05.087
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 19:40:33.133
+!MESSAGE 19:33:40.570 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:47:50.160
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:47:50.160
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:47:50.160
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:47:50.203
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 19:47:56.333
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 19:47:56.334
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:05.881
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 19:48:07.078
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-09 19:48:07.078
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:08.202
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:08.202
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:08.202
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:08.240
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:48:11.401
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 19:50:16.527
+!MESSAGE 19:49:22.500 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:54:02.106
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:54:02.107
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:54:02.107
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:54:02.149
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 19:56:18.803
+!MESSAGE 19:54:46.256 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:57:25.237
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:57:25.237
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:57:25.237
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 19:57:25.276
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 19:59:22.061
+!MESSAGE 19:58:05.312 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:00:22.229
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:00:22.230
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:00:22.230
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:00:22.268
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 20:03:25.062
+!MESSAGE 20:00:59.344 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:09:42.800
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:09:42.800
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:09:42.800
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-09 20:09:42.841
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-09 20:16:45.132
+!MESSAGE 20:10:11.171 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+!SESSION 2026-09-10 13:19:08.995 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-10 13:19:26.147
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-10 13:19:27.994
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-10 13:19:28.004
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:24:46.357
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:24:55.012
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:24:55.013
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:24:55.014
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:24:55.053
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 13:26:54.599
+!MESSAGE 13:25:27.797 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:30:21.881
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:30:27.398
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:31:10.230
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:31:10.231
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:31:10.231
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:31:10.275
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 13:32:12.681
+!MESSAGE 13:32:10.338 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:38:00.067
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:38:00.067
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:38:00.067
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:38:00.112
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 13:43:02.290
+!MESSAGE 13:42:49.635 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:51:39.598
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 13:51:45.100
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:14:02.900
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:14:02.901
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:14:02.901
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:14:02.943
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:29:49.456
+!MESSAGE 14:25:52.903 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:36:46.790
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:36:46.790
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:36:46.790
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:36:46.834
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:36:52.926
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:36:52.927
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:36:59.011
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:36:59.011
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:37:01.321
+!MESSAGE 14:36:59.012 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:37:03.940
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:37:03.940
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:37:03.940
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:37:03.990
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:38:58.188
+!MESSAGE 14:37:55.114 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:49:17.461
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:49:17.461
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:49:17.461
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:49:17.504
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:23.073
+!MESSAGE Connect to telent hostName:localhost, port:9,901 is failed.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:23.073
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:25.117
+!MESSAGE Connect to telent hostAddress:192.168.43.148, port:9,901 is failed.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:25.117
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:117)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:25.117
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-10 14:49:25.117
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:117)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:34.593
+!MESSAGE 14:49:33.309 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64026402 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:34.594
+!MESSAGE 14:49:30.789 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64024402 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:34.595
+!MESSAGE 14:49:30.789 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! The debug target failed to update the DTR register.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:38.351
+!MESSAGE 14:49:35.826 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64070002 0x64026403 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:38.352
+!MESSAGE 14:49:36.333 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64002002 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:50.333
+!MESSAGE 14:49:45.939 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64004002 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:49:50.333
+!MESSAGE 14:49:46.449 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x6404c002 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:00.990
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:50:02.239
+!MESSAGE 14:49:56.545 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x6404e002 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:50:02.240
+!MESSAGE 14:49:58.262 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x6402ac02 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:50:02.240
+!MESSAGE 14:49:59.794 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64020002 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:50:03.836
+!MESSAGE 14:50:01.320 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Debug operations do not finish properly: 0x64020402 0x64070003 0x64000008 0x4c003ffa.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:06.503
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:08.056
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:08.056
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:08.056
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:50:08.099
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:50:09.860
+!MESSAGE 14:50:07.430 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 14:51:31.331
+!MESSAGE 14:50:57.514 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:59:39.830
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:59:39.830
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:59:39.830
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 14:59:39.871
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 15:02:27.491
+!MESSAGE 15:00:48.668 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:03:35.764
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:03:35.765
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:03:35.765
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:03:35.807
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 15:12:00.523
+!MESSAGE 15:10:17.856 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:12:14.892
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:12:14.892
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:12:14.892
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-10 15:12:14.939
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-10 15:27:18.526
+!MESSAGE 15:24:10.958 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+!SESSION 2026-09-11 08:53:42.200 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-11 08:55:11.385
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 08:55:13.238
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 08:55:13.249
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 09:04:56.495
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-09-11 11:06:24.812
+!MESSAGE Indexed 'Example_Timer' (5 sources, 60 headers) in 0.284 sec: 4,153 declarations; 4,841 references; 0 unresolved inclusions; 0 syntax errors; 23 unresolved names (0.26%)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:40:00.878
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:40:00.879
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:40:00.879
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:40:00.921
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 11:42:29.914
+!MESSAGE 11:40:58.258 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:42:55.517
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:42:55.517
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:42:55.517
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 11:42:55.560
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 12:46:04.992
+!MESSAGE 12:45:19.546 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:06:23.055
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:06:23.056
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:06:23.056
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:06:23.095
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 13:34:49.196
+!MESSAGE 13:34:06.598 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:40:18.845
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:40:18.845
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:40:18.845
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:40:18.887
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:43:28.925
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:43:34.435
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 13:43:50.562
+!MESSAGE 13:43:26.055 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:46:43.125
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:46:43.126
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:46:43.126
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 13:46:43.169
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 14:01:36.232
+!MESSAGE 14:01:29.984 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:06:19.155
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:06:19.156
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:06:19.156
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:06:19.198
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 14:19:57.355
+!MESSAGE 14:19:52.049 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:21:32.511
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:21:32.512
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:21:32.512
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:21:32.554
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 14:33:49.486
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 14:33:56.327
+!MESSAGE 14:33:43.972 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY org.eclipse.ui 4 0 2026-09-11 14:34:01.443
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.andestech.ide.flash.ui.wizards.FlashDriverWizardDialog.setBurnerWizardOpened(FlashDriverWizardDialog.java:81)
+	at com.andestech.ide.flash.ui.wizards.FlashDriverWizardDialog.close(FlashDriverWizardDialog.java:73)
+	at org.eclipse.jface.wizard.WizardDialog.cancelPressed(WizardDialog.java:468)
+	at org.eclipse.jface.wizard.WizardDialog$1.widgetSelected(WizardDialog.java:321)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:827)
+	at org.eclipse.jface.window.Window.open(Window.java:803)
+	at com.andestech.ide.flash.ui.wizards.FlashDriverWizardDialog.open(FlashDriverWizardDialog.java:68)
+	at com.andestech.ide.flash.driver.ui.rse.commands.FlashBurnHandler.execute(FlashBurnHandler.java:265)
+	at com.andestech.ide.flash.driver.ui.rse.commands.FlashBurnHandler.execute(FlashBurnHandler.java:127)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:295)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:90)
+	at sun.reflect.GeneratedMethodAccessor49.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:252)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:234)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:132)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:152)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:493)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:486)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:210)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.executeItem(HandledContributionItem.java:799)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.handleWidgetSelection(HandledContributionItem.java:675)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.access$7(HandledContributionItem.java:659)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem$4.handleEvent(HandledContributionItem.java:592)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at com.andestech.ide.deploy.AndesApplication.start(AndesApplication.java:86)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2026-09-11 18:55:10.066 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-11 18:55:28.611
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 18:55:30.437
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-11 18:55:30.447
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 18:55:32.716
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:05:50.466
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:05:50.467
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:05:50.467
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:05:50.502
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 22:21:07.621
+!MESSAGE 22:17:12.995 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:21:54.294
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:21:54.294
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:21:54.294
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 22:21:54.329
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 22:58:50.669
+!MESSAGE 22:58:28.076 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:05:17.417
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:05:17.417
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:05:17.417
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:05:17.456
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:06:42.831
+!MESSAGE 23:06:05.286 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:15:45.459
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:15:45.459
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:15:45.459
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:15:45.498
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:18:57.336
+!MESSAGE 23:18:54.141 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:19:27.616
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:19:27.617
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:19:27.617
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:19:27.655
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:20:16.401
+!MESSAGE 23:19:55.474 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:23:24.315
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:23:24.315
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:23:24.315
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:23:24.352
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:24:10.748
+!MESSAGE 23:23:55.792 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:27:29.726
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:27:29.727
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:27:29.727
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:27:29.768
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:36:47.728
+!MESSAGE 23:36:44.718 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:37:56.710
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:37:56.710
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:37:56.710
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:37:56.748
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:02.882
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:02.883
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:09.008
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:09.008
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:38:13.662
+!MESSAGE 23:38:09.009 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:38.323
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:38.323
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:38.323
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:38.363
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:44.474
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:44.475
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:48.201
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:48.202
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:48.202
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:48.241
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:48.515
+!MESSAGE Connect to telent hostName:localhost, port:9,901 is failed.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-11 23:38:48.515
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:38:49.023
+!MESSAGE telnetClient.connect:  DESKTOP-FAAJCDC/192.168.71.167 : 9,901
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:38:52.750
+!MESSAGE 23:38:49.026 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-11 23:40:22.044
+!MESSAGE 23:40:05.294 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:41:07.884
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:41:07.884
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:41:07.885
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-11 23:41:07.924
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 00:03:01.600
+!MESSAGE 00:01:43.109 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:35.899
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:35.899
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:35.899
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:35.940
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:39.606
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 00:07:42.054
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 00:07:42.054
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:43.768
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:43.768
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:43.768
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:43.812
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:07:45.130
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 00:07:46.906
+!MESSAGE 00:07:44.591 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 00:14:34.352
+!MESSAGE 00:12:34.162 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:28:48.532
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:28:48.533
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:28:48.533
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 00:28:48.575
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 00:30:43.885
+!MESSAGE 00:29:40.871 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+!SESSION 2026-09-12 12:35:45.899 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-12 12:37:48.911
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 12:37:50.558
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 12:37:50.572
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:37:52.555
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:50:01.079
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:50:01.079
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:50:01.079
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:50:01.118
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 12:52:08.307
+!MESSAGE 12:51:51.024 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:52:49.747
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:52:49.747
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:52:49.747
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 12:52:49.775
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 12:55:37.331
+!MESSAGE 12:55:28.097 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:07:23.451
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:07:23.451
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:07:23.451
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:07:23.482
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 13:09:15.712
+!MESSAGE 13:07:53.527 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:11:52.311
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:11:52.311
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:11:52.311
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:11:52.343
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:16:56.551
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:17:02.065
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:17:52.138
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:17:57.642
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 13:19:34.215
+!MESSAGE 13:16:55.207 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: AICE ERROR! AICE is unplugged.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:42:57.241
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:42:57.242
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:42:57.242
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:42:57.279
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:49:45.763
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:49:51.286
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:51:06.444
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:52:07.031
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 13:52:12.034
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 14:29:41.793
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 14:40:56.834
+!MESSAGE 13:49:41.356 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 14:47:20.605
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 14:47:20.605
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 14:47:20.605
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 14:47:20.637
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 15:00:31.503
+!MESSAGE 15:00:29.279 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 15:11:08.882
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 15:11:08.882
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 15:11:08.882
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 15:11:08.914
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 15:46:22.904
+!MESSAGE 15:44:30.379 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 16:11:31.859
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 16:11:37.384
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 16:12:12.472
+!MESSAGE connectDevice...false, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+!SESSION 2026-09-12 21:29:23.469 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-12 21:29:38.030
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 21:29:39.669
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 21:29:39.680
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+!SESSION 2026-09-12 21:40:46.956 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-12 21:40:53.982
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 21:40:54.784
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 21:40:54.787
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+!SESSION 2026-09-12 23:07:16.702 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-09-12 23:07:37.059
+!MESSAGE Both 'com.andestech.ide.ldsag' and 'com.andestech.ide.ldsag.xtext' register a package for 'http:///ide.andestech.com.ldsag/ldsag.ecore'
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 23:07:38.450
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.binutils, page: org.eclipse.linuxtools.binutils.preferences)
+
+!ENTRY org.eclipse.ui 2 2 2026-09-12 23:07:38.467
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.profiling.provider.MainPreferencePage (bundle: org.eclipse.linuxtools.gcov.core, page: org.eclipse.linuxtools.gcov.core.preferences.colors)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:07:40.334
+!MESSAGE connectDevice...true, IceDevice [vid=7420, pid=0, name=, argumentMap=null]
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:07:55.967
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:07:55.967
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:07:55.967
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:07:56.014
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 23:09:48.584
+!MESSAGE 23:08:24.274 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:07.167
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:07.167
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:07.167
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:07.199
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 23:13:13.303
+!MESSAGE Failed to connect to the telnet port.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 23:13:13.303
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:102)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:18.645
+!MESSAGE Fork ICEman command:D:\ANDES\ice\ICEman.exe --bport=9900 --tport=9901 --port=9902:49151 -A -N reset-hold-script.tpl -H -f "/cygdrive/D/MV_SOLUTION_AP82/roboeffect-release-master/_ICEman_/" 
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:18.645
+!MESSAGE Fork ICEman Working Directory:D:\ANDES\ice
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:18.645
+!MESSAGE Before exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:18.676
+!MESSAGE After exec ICEman.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 23:13:19.389
+!MESSAGE Connect to telent hostName:localhost, port:9,901 is failed.
+
+!ENTRY com.andestech.ide.tm.rse 4 4 2026-09-12 23:13:19.389
+!MESSAGE Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 1 -1 2026-09-12 23:13:19.389
+!MESSAGE telnetClient.connect:  DESKTOP-FAAJCDC/192.168.71.167 : 9,901
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 23:13:21.939
+!MESSAGE 23:13:19.396 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception:  Issue custom_script 't_write_misc 0 2 4
+' failed, abandon continue
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+!ENTRY com.andestech.ide.tm.rse 4 1 2026-09-12 23:35:27.035
+!MESSAGE 23:35:18.324 ICE-ICE Error on Target [ADP-AG101P-4GB-D1088-SPU-32I]
+!STACK 0
+java.lang.Exception: TARGET ERROR! Target is disconnected with AICE.
+
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessStatus.<init>(TargetProcessStatus.java:24)
+	at com.andestech.ide.tm.rse.model.impl.TargetProcessInfo.setErrorMessage(TargetProcessInfo.java:190)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.parseLine(ProcessConsole.java:210)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:63)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)

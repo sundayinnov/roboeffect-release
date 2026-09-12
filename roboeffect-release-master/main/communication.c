@@ -881,7 +881,7 @@ void load_hardware_fr_default(void)
 #ifdef EXTERNAL_CLK
 	gCtrlVars.dac0_mclk_src = 4;
 #else
-	gCtrlVars.dac0_mclk_src = 0;
+	gCtrlVars.dac0_mclk_src = 1;
 #endif
 
 	//DAC1
@@ -906,13 +906,13 @@ void load_hardware_fr_default(void)
 
 	//I2S0
 	gCtrlVars.i2s0_tx_en = 1;
-	gCtrlVars.i2s0_rx_en = 1;
-	gCtrlVars.i2s0_sample_rate = g_user_effect_list->sample_rate;
+	gCtrlVars.i2s0_rx_en = 0;
+	gCtrlVars.i2s0_sample_rate = 48000;//g_user_effect_list->sample_rate;
 #ifdef EXTERNAL_CLK
 	gCtrlVars.i2s0_mclk_src = 4;
 	gCtrlVars.i2s0_work_mode = 1;
 #else
-	gCtrlVars.i2s0_mclk_src = 0;
+	gCtrlVars.i2s0_mclk_src = 1;
 	gCtrlVars.i2s0_work_mode = 0;
 #endif
 
@@ -920,7 +920,7 @@ void load_hardware_fr_default(void)
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S0_RX")) != NULL || (device_node = adapt_get_item(g_adapter, "SINK_I2S0_TX")) != NULL)
 		gCtrlVars.i2s0_word_len = (device_node->width == BITS_16)?(I2S_LENGTH_16BITS):(I2S_LENGTH_24BITS);
 	else
-		gCtrlVars.i2s0_word_len = I2S_LENGTH_24BITS;
+		gCtrlVars.i2s0_word_len = I2S_LENGTH_32BITS;
 	
 	gCtrlVars.i2s0_mono = FALSE;
 	gCtrlVars.i2s0_fade_time = 0;
@@ -930,23 +930,23 @@ void load_hardware_fr_default(void)
 	//I2S1
 	gCtrlVars.i2s1_tx_en = 1;
 	gCtrlVars.i2s1_rx_en = 1;
-	gCtrlVars.i2s1_sample_rate = g_user_effect_list->sample_rate;
+	gCtrlVars.i2s1_sample_rate = 48000;//g_user_effect_list->sample_rate;
 #ifdef EXTERNAL_CLK
 	gCtrlVars.i2s1_mclk_src = 4;
 	gCtrlVars.i2s1_work_mode = 1;
 #else
-	gCtrlVars.i2s1_mclk_src = 0;
-	gCtrlVars.i2s1_work_mode = 0;
+	gCtrlVars.i2s1_mclk_src = 1;
+	gCtrlVars.i2s1_work_mode = 1;
 #endif
 	gCtrlVars.i2s1_format = I2S_FORMAT_I2S;
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX")) != NULL || (device_node = adapt_get_item(g_adapter, "SINK_I2S1_TX")) != NULL)
 		gCtrlVars.i2s1_word_len = (device_node->width == BITS_16)?(I2S_LENGTH_16BITS):(I2S_LENGTH_24BITS);
 	else
-		gCtrlVars.i2s1_word_len = I2S_LENGTH_24BITS;
+		gCtrlVars.i2s1_word_len = I2S_LENGTH_16BITS;
 
 	gCtrlVars.i2s1_mono = FALSE;
 	gCtrlVars.i2s1_fade_time = 0;
-	gCtrlVars.i2s1_bclk_invert_en = FALSE;
+	gCtrlVars.i2s1_bclk_invert_en = TRUE;
 	gCtrlVars.i2s1_lrclk_invert_en = FALSE;
 
 	//SPDIF
@@ -1205,7 +1205,7 @@ void load_hardware_fr_params_raw(uint8_t *parameters)
 	//I2S0
 	gCtrlVars.i2s0_tx_en = 0;
 	gCtrlVars.i2s0_rx_en = 0;
-	gCtrlVars.i2s0_sample_rate = g_user_effect_list->sample_rate;
+	gCtrlVars.i2s0_sample_rate = 48000;//g_user_effect_list->sample_rate;
 #ifdef EXTERNAL_CLK
 	gCtrlVars.i2s0_mclk_src = 4;
 	gCtrlVars.i2s0_work_mode = 1;
@@ -1229,7 +1229,7 @@ void load_hardware_fr_params_raw(uint8_t *parameters)
 	//I2S1
 	gCtrlVars.i2s1_tx_en = 1;
 	gCtrlVars.i2s1_rx_en = 1;
-	gCtrlVars.i2s1_sample_rate = g_user_effect_list->sample_rate;
+	gCtrlVars.i2s1_sample_rate = 48000;//g_user_effect_list->sample_rate;
 	
 #ifdef EXTERNAL_CLK
 	gCtrlVars.i2s1_mclk_src = 4;
@@ -3184,7 +3184,7 @@ uint32_t Comm_Form_Rsp_I2S0_0x0B(uint8_t *buffer)
 
 	*(pp++) = gCtrlVars.i2s0_tx_en;
 	*(pp++) = gCtrlVars.i2s0_rx_en;
-	*(pp++) = comm_ret_sample_rate_enum(g_user_effect_list->sample_rate);
+	*(pp++) = comm_ret_sample_rate_enum(48000);//g_user_effect_list->sample_rate
 	*(pp++) = gCtrlVars.i2s0_mclk_src;
 	*(pp++) = gCtrlVars.i2s0_work_mode;
 	*(pp++) = gCtrlVars.i2s0_word_len;
@@ -3354,7 +3354,7 @@ uint32_t Comm_Form_Rsp_I2S1_0x0C(uint8_t *buffer)
 
 	*(pp++) = gCtrlVars.i2s1_tx_en;
 	*(pp++) = gCtrlVars.i2s1_rx_en;
-	*(pp++) = comm_ret_sample_rate_enum(g_user_effect_list->sample_rate);
+	*(pp++) = comm_ret_sample_rate_enum(48000);//g_user_effect_list->sample_rate
 	*(pp++) = gCtrlVars.i2s1_mclk_src;
 	*(pp++) = gCtrlVars.i2s1_work_mode;
 	*(pp++) = gCtrlVars.i2s1_word_len;

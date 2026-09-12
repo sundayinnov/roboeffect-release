@@ -128,3 +128,1292 @@ java.net.ConnectException: Connection refused: connect
 
 [INFO ] 26/09/08-14:51:10:010 - Log4A.logInfo(Log4A.java:34) 
 [Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-15:02:46:046 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/08-15:02:50:050 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/08-15:02:50:050 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-15:02:51:051 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/08-15:06:40:040 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-08:37:57:057 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/09-08:38:02:002 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/09-08:38:02:002 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-08:38:03:003 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-08:39:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-08:39:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-08:39:35:035 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-09:08:48:048 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:08:48:048 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:09:11:011 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-09:09:41:041 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-09:20:31:031 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:20:31:031 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:20:56:056 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-09:26:55:055 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/09-09:45:13:013 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/09-09:45:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/09-09:45:32:032 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:45:32:032 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:45:58:058 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-09:59:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:59:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-09:59:54:054 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:06:59:059 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:08:50:050 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:10:46:046 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:10:46:046 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:11:16:016 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:25:13:013 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:27:40:040 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:30:43:043 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:38:40:040 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:45:41:041 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:46:13:013 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:46:13:013 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:46:43:043 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:52:53:053 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:52:53:053 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:53:22:022 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:56:06:006 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:57:20:020 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-10:58:07:007 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:58:07:007 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-10:58:33:033 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:09:20:020 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:09:20:020 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:09:49:049 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:11:12:012 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:11:12:012 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:11:42:042 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:16:48:048 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:17:46:046 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:18:13:013 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:18:13:013 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:18:43:043 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:19:52:052 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:44:47:047 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:44:47:047 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:45:17:017 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:51:05:005 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:53:51:051 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:53:51:051 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-11:54:21:021 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:56:51:051 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-11:58:38:038 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:04:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-12:04:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-12:04:27:027 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:09:07:007 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:12:06:006 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:20:02:002 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:26:56:056 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:50:04:004 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-12:53:32:032 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-12:53:32:032 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-12:53:59:059 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-13:01:42:042 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-13:05:28:028 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-13:50:21:021 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-13:50:21:021 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-13:50:48:048 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-13:53:36:036 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-13:56:41:041 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-14:49:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-14:49:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-14:50:23:023 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:16:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-15:16:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-15:16:49:049 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:23:55:055 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:31:30:030 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:33:20:020 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:35:51:051 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-15:47:19:019 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-18:30:38:038 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/09-18:30:45:045 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/09-18:30:45:045 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-18:30:45:045 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/09-18:34:55:055 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:34:55:055 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:35:22:022 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-18:37:06:006 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:37:06:006 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:37:30:030 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-18:39:41:041 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:39:41:041 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-18:40:08:008 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-19:30:09:009 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-19:33:06:006 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:33:06:006 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:33:31:031 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/09-19:47:53:053 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/09-19:48:04:004 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/09-19:48:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:48:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:48:38:038 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-19:54:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:54:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:54:27:027 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-19:57:26:026 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:57:26:026 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-19:57:51:051 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-20:00:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-20:00:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-20:00:52:052 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-20:09:43:043 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-20:09:43:043 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/09-20:10:08:008 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/09-21:03:09:009 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/10-13:19:26:026 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/10-13:19:32:032 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/10-13:19:32:032 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: call TRUE_LICENSE license
+
+[INFO ] 26/09/10-13:19:33:033 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/10-13:24:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:24:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:25:23:023 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-13:31:11:011 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:31:11:011 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:31:40:040 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-13:38:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:38:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-13:38:30:030 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-14:14:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:14:03:003 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:14:33:033 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-14:25:21:021 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/10-14:36:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/10-14:36:55:055 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/10-14:37:05:005 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:37:05:005 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:37:34:034 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/10-14:49:20:020 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[INFO ] 26/09/10-14:49:23:023 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:107) 
+[ModalContext]: retry: 1
+
+[INFO ] 26/09/10-14:49:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/10-14:49:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/10-14:49:41:041 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-14:50:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:50:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:50:38:038 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-14:59:40:040 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-14:59:40:040 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-15:00:10:010 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-15:03:36:036 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-15:03:36:036 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-15:04:06:006 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/10-15:12:15:015 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-15:12:15:015 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/10-15:12:43:043 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-08:55:11:011 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/11-08:55:17:017 - Log4A.logInfo(Log4A.java:34) 
+[Worker-4]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/11-08:55:17:017 - Log4A.logInfo(Log4A.java:34) 
+[Worker-4]: call TRUE_LICENSE license
+
+[INFO ] 26/09/11-08:55:18:018 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/11-11:40:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-11:40:01:001 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-11:40:31:031 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-11:42:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-11:42:56:056 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-11:43:21:021 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-11:48:40:040 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-12:13:07:007 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:06:24:024 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:06:24:024 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:06:50:050 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:12:01:001 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:14:57:057 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:18:18:018 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:29:28:028 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:33:50:050 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:40:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:40:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:40:49:049 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:46:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:46:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-13:47:10:010 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:54:24:024 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-13:59:09:009 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:01:28:028 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:06:20:020 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-14:06:20:020 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-14:06:45:045 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:12:42:042 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:19:42:042 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:21:33:033 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-14:21:33:033 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-14:22:03:003 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:27:55:055 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:29:06:006 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-14:33:23:023 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-18:55:28:028 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/11-18:55:34:034 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/11-18:55:34:034 - Log4A.logInfo(Log4A.java:34) 
+[Worker-0]: call TRUE_LICENSE license
+
+[INFO ] 26/09/11-18:55:35:035 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/11-22:05:51:051 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-22:05:51:051 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-22:06:16:016 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:13:47:047 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:17:11:011 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:21:55:055 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-22:21:55:055 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-22:22:23:023 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:23:45:045 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:28:47:047 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:32:25:025 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:34:01:001 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-22:58:26:026 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:05:18:018 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:05:18:018 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:05:47:047 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:15:46:046 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:15:46:046 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:16:16:016 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:18:53:053 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:19:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:19:28:028 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:19:54:054 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:23:25:025 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:23:25:025 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:23:54:054 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:27:30:030 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:27:30:030 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:28:00:000 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:32:20:020 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:35:51:051 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/11-23:37:59:059 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/11-23:38:05:005 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[ERROR] 26/09/11-23:38:41:041 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/11-23:38:47:047 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/11-23:38:48:048 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:107) 
+[Process InputStream Console Thread]: retry: 1
+
+[INFO ] 26/09/11-23:38:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:119) 
+[Process InputStream Console Thread]: telnetClient.connect:  DESKTOP-FAAJCDC/192.168.71.167 : 9,901
+
+[INFO ] 26/09/11-23:38:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/11-23:38:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:38:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:39:14:014 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:41:08:008 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:41:08:008 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/11-23:41:38:038 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:44:33:033 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:46:49:049 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/11-23:48:57:057 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-00:00:04:004 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/12-00:07:38:038 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[INFO ] 26/09/12-00:07:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/12-00:07:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/12-00:07:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-00:07:44:044 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-00:08:09:009 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-00:12:33:033 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-00:28:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-00:28:49:049 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-00:29:15:015 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-00:40:22:022 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-12:37:48:048 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/12-12:37:54:054 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/12-12:37:54:054 - Log4A.logInfo(Log4A.java:34) 
+[Worker-2]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-12:37:55:055 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-12:50:02:002 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-12:50:02:002 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-12:50:31:031 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-12:52:50:050 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-12:52:50:050 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-12:53:20:020 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-12:55:26:026 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-13:07:24:024 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:07:24:024 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:07:52:052 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-13:11:53:053 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:11:53:053 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:12:18:018 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-13:42:58:058 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:42:58:058 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-13:43:24:024 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-14:47:21:021 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-14:47:21:021 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-14:47:48:048 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-14:56:51:051 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-14:58:02:002 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:00:28:028 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:11:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-15:11:09:009 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-15:11:35:035 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:14:49:049 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:26:50:050 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:31:41:041 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:40:45:045 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-15:44:29:029 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-16:12:39:039 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:29:37:037 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/12-21:29:43:043 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/12-21:29:43:043 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:29:44:044 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:30:36:036 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:40:53:053 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/12-21:40:57:057 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/12-21:40:57:057 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:40:58:058 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-21:44:29:029 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-23:07:36:036 - LogPlugin.setLoggerProperties(LogPlugin.java:134) 
+[main]: << Workspace / astlog.home>> : D:\MV_SOLUTION_AP82\roboeffect-release-master
+===========================================================
+
+[INFO ] 26/09/12-23:07:41:041 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: ##Detail Info : Check Job (mode is Activation File,File is C:\Users\Sunday Gong\.andesight\ast3.2.3_rds\configuration\com.andestech.ide.license.ui\license.lic)
+
+[INFO ] 26/09/12-23:07:41:041 - Log4A.logInfo(Log4A.java:34) 
+[Worker-3]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-23:07:42:042 - Log4A.logInfo(Log4A.java:34) 
+[main]: call TRUE_LICENSE license
+
+[INFO ] 26/09/12-23:07:57:057 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-23:07:57:057 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-23:08:23:023 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[ERROR] 26/09/12-23:13:10:010 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[ModalContext]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.<init>(IceTargetProcessInfo.java:144)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.forkIce(LocalTargetResourceService.java:309)
+	at com.andestech.ide.tm.rse.local.LocalTargetResourceService.connectICE(LocalTargetResourceService.java:322)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.connectICE(RseFlashDriverRunnable.java:151)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.start(RseFlashDriverRunnable.java:52)
+	at com.andestech.ide.flash.driver.ui.FlashDriverRunnable.run(FlashDriverRunnable.java:29)
+	at com.andestech.ide.flash.driver.ui.rse.RseFlashDriverRunnable.run(RseFlashDriverRunnable.java:160)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+[ERROR] 26/09/12-23:13:16:016 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:97) 
+[Process InputStream Console Thread]: ConnectException:
+java.net.ConnectException: Connection refused: connect
+	at java.net.TwoStacksPlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:182)
+	at org.apache.commons.net.SocketClient.connect(SocketClient.java:203)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:92)
+	at com.andestech.ide.tm.rse.OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:72)
+	at com.andestech.ide.tm.rse.model.impl.IceTargetProcessInfo.createOpenOCDTelnetClient(IceTargetProcessInfo.java:274)
+	at com.andestech.ide.tm.rse.local.console.IceProcessConsole.parseLine(IceProcessConsole.java:90)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.writeLine(ProcessConsole.java:260)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole.access$1(ProcessConsole.java:250)
+	at com.andestech.ide.tm.rse.local.console.ProcessConsole$1.run(ProcessConsole.java:73)
+
+[INFO ] 26/09/12-23:13:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:107) 
+[Process InputStream Console Thread]: retry: 1
+
+[INFO ] 26/09/12-23:13:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:119) 
+[Process InputStream Console Thread]: telnetClient.connect:  DESKTOP-FAAJCDC/192.168.71.167 : 9,901
+
+[INFO ] 26/09/12-23:13:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[Process InputStream Console Thread]: connected: true
+
+[INFO ] 26/09/12-23:13:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-23:13:19:019 - OpenOCDTelnetClient.<init>(OpenOCDTelnetClient.java:95) 
+[ModalContext]: connected: true
+
+[INFO ] 26/09/12-23:13:46:046 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-23:31:15:015 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-23:35:17:017 - Log4A.logInfo(Log4A.java:34) 
+[ModalContext]: OpenOCD Telnet Client writeLine:resume
+
+[INFO ] 26/09/12-23:36:22:022 - Log4A.logInfo(Log4A.java:34) 
+[Framework stop]: call TRUE_LICENSE license

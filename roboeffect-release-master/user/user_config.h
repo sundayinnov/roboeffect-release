@@ -72,7 +72,7 @@ extern "C" {
 #define USER_DATA_LEN 32
 #define USER_DATA_DEFAULT "Default Version v0.0.1"
 
-// #define CFG_LOW_POWER_MODE
+//#define CFG_LOW_POWER_MODE
 
 // #define ADC_KEY_SCAN
 #ifdef ADC_KEY_SCAN

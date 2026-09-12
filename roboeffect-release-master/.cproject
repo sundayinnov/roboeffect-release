@@ -62,6 +62,7 @@
 									<listOptionValue builtIn="false" value="Roboeffect"/>
 									<listOptionValue builtIn="false" value="beamforming"/>
 									<listOptionValue builtIn="false" value="resampler"/>
+									<listOptionValue builtIn="false" value="sra"/>
 									<listOptionValue builtIn="false" value="AudioEffectLibrary"/>
 									<listOptionValue builtIn="false" value="AudioDecoderLibrary"/>
 									<listOptionValue builtIn="false" value="VocalCut"/>

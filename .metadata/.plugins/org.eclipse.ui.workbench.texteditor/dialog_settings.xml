@@ -2,17 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="err_str" key="selection"/>
+		<item value="i2s_tx_size" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="roboeffect_user_define_addi_data"/>
-			<item value="An error occurred."/>
-			<item value="Get context size failed, Error"/>
-			<item value="ROBOEFFECT_EFFECT_LIB_NOT_MATCH_1␍␊"/>
-			<item value="Get context size failed"/>
+			<item value="i2s_tx_size"/>
+			<item value="I2S1_RX_RING_SIZE"/>
+			<item value="frames/sec"/>
+			<item value="I2S1_FRAME_SIZE_48K"/>
+			<item value="hardware_pipe_reset"/>
+			<item value="resampler_up"/>
+			<item value="down_ready"/>
+			<item value="Ring len"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -21,7 +24,7 @@
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="400" key="DIALOG_HEIGHT"/>
-		<item value="1248" key="DIALOG_X_ORIGIN"/>
+		<item value="1101" key="DIALOG_X_ORIGIN"/>
 		<item value="302" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

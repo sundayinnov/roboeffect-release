@@ -1,0 +1,121 @@
+/**
+ **************************************************************************************
+ * @file    user_config.h
+ * @brief   Karaoke DSP SDK User Configurations
+ *
+ * @author  Aissen Li
+ * @version V1.0.0
+ *
+ * &copy; Shanghai Mountain View Silicon Technology Co.,Ltd. All rights reserved.
+ **************************************************************************************
+ */
+
+#ifndef __USER_CONFIG_H__
+#define __USER_CONFIG_H__
+
+#ifdef  __cplusplus
+extern "C" {
+#endif//__cplusplus
+
+//****************************************************************************************
+//                 Chip Type select 
+//****************************************************************************************
+#define CHIPSET_I "AP8248A2"
+
+//****************************************************************************************
+//                 UART DEBUG function config
+//****************************************************************************************
+#define  CFG_DEBUG_EN                                    (1)
+
+	#define  UART0_N0	1//  uart 0  number 0:  GPIOA13-TX?? GPIOA14-RX, GPIOA15-RTS, GPIOA16-CTS
+	#define  UART1_N0	2//  uart 1  number 0:  GPIOB0-TX,   GPIOB1-RX,	 GPIOA31-RTS, GPIOA30-CTS
+	#define  UART1_N1	3//  uart 1  number 1:  GPIOB2-TX,   GPIOB3-RX
+	#define  UART1_N2	4//  uart 1  number 2:  GPIOB7-TX,   GPIOB6-RX
+	#define  UART_SW_N0	5  ////GPIOB8
+        #define  UART_SW_PORT       GPIO_A_START//GPIO_B_START
+        #define  UART_SW_PORT_PIN   29//0
+
+#define  DBG_UART_IO   UART_SW_N0
+
+
+#define CFG_COMMUNICATION_ENABLE 						(1)
+#define COMMUNICATION_UART								(0)
+#define COMMUNICATION_USB_HID							(1)
+#define COMMUNICATION_IIC									(0)
+
+//****************************************************************************************
+//				   WATCH DOG function config
+//****************************************************************************************
+#define  CFG_WATCH_DOG_EN                   			 (0)
+
+
+//****************************************************************************************
+//                 audio frame size
+//****************************************************************************************
+#define  CFG_MIN_SAMPLES_PER_FRAME          			 (64)  //
+#define  CFG_MAX_SAMPLES_PER_FRAME          			 (512)  //
+#define  CFG_SAMPLE_RATE                    			 (44100)//CFG_SAMPLE_RATE_48K//CFG_SAMPLE_RATE_44K
+
+#define ROBOEFFECT_MAGIC_NUM (0x561A493B)
+
+//main version for roboeffect demo
+#define ROBOEFFECT_VER_H 3
+#define ROBOEFFECT_VER_M 23
+#define ROBOEFFECT_VER_L 1
+
+#define ROBOEFFECT_DEMO_VER "3.23.1"
+
+#define RELEASE_CUSTOM (0)
+
+#define ROBOEFFECT_MIN_FRAME_SIZE 256
+
+#define USER_DATA_LEN 32
+#define USER_DATA_DEFAULT "Default Version v0.0.1"
+
+ #define CFG_LOW_POWER_MODE
+
+// #define ADC_KEY_SCAN
+#ifdef ADC_KEY_SCAN
+#define CFG_FUNC_AUDIOEFFECT_AUTO_GEN_MSG_PROC
+#define CFG_FLOWCHART_DEMO_ENABLE
+#endif
+// #define LED_SHOW
+
+#define DMA_BUFFER_LEN 512
+
+#define CFG_APP_USB_AUDIO_MODE_EN
+#ifdef CFG_APP_USB_AUDIO_MODE_EN
+	#include "otg_device_standard_request.h"
+	#define OTG_DEVICE_MODE	AUDIO_MIC_HID
+#endif
+
+// #define USE_CODEC_PARAMTERS
+
+// #define EXTERNAL_CLK
+
+// #define NEED_ENCRYPTED
+#ifdef NEED_ENCRYPTED
+#define ENCRYPTED_KEY {0x12, 0x34, 0xAB, 0xCD}
+#define ENCRYPTED_FLAG 0x01
+#else
+#define ENCRYPTED_FLAG 0x00
+#endif
+
+#define FIRMWARE_NAME "Roboeffect_Demo On AP82"
+
+typedef enum _robo_connect_mode
+{
+	MODE_I2C = 0x00,
+	MODE_UART = 0x01,
+	MODE_HID = 0x02,
+	MODE_NONE = 0xff
+
+} robo_connect_mode;
+
+#define ROBO_RODATA_ADDRESS (0xCE000)
+
+#ifdef  __cplusplus
+}
+#endif//__cplusplus
+
+#endif//__USER_CONFIG_H__

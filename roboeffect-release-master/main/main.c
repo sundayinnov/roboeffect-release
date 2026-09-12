@@ -12,6 +12,7 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
 #include <nds32_intrinsic.h>
 #include "sys.h"
 #include "remap.h"
@@ -36,14 +37,13 @@
 #include "sadc_interface.h"
 #include "chip_info.h"
 #include "delay.h"
+#include "resampler.h"
+#include "mcu_circular_buf.h"
 #include "audio_effect_library.h"
 #include "audio_decoder_api.h"
 #include "flash_boot.h"
 #include "timer.h"
-#include "resampler.h"
-#include "blue_aec.h"
-#include "blue_ns.h"
-#include "mcu_circular_buf.h"
+
 //?
 #include "otg_device_standard_request.h"
 
@@ -58,13 +58,10 @@
 #include "audio_decoder_api.h"
 #include "communication.h"
 #include "roboeffect_adapt.h"
-#include "pcm_delay.h"
+
 #ifdef ADC_KEY_SCAN
 #include "auto_gen_msg_process.h"
 #endif
-//定义2个全局buf，用于缓存ADC和DAC的数据，注意单位
-uint32_t AudioADC1Buf[1024*4] = {0}; //1024 * 4 = 4K
-uint32_t AudioADC2Buf[1024*4] = {0};
 
 const uint8_t DmaChannelMap[28] =
 {
@@ -97,53 +94,6 @@ const uint8_t DmaChannelMap[28] =
 	255, //PERIPHERAL_ID_ADC,     			//26
 	255, //PERIPHERAL_ID_SOFTWARE,			//27
 };
-static uint32_t PcmBuf1[512] = {0};
-static uint32_t PcmBuf2[512] = {0};
-static int16_t AecBuf1[512] = {0};
-static int16_t AecBuf2[512] = {0};
-static int16_t AecBuf3[512] = {0};
-
-#define EFFECT_FRAME_SIZE_48K  384          // 图帧长（48kHz侧）
-#define AEC_FRAME_SIZE_16K     128          // = EFFECT_FRAME_SIZE_48K / 3
-
-// MIC延时环参数
-#define MAX_DELAY_BLOCK        32
-#define DEFAULT_DELAY_BLK      0
-#define MIC_DELAY_BUF_SIZE     (AEC_FRAME_SIZE_16K * MAX_DELAY_BLOCK)
-
-#define I2S1_RX_RING_SIZE  (EFFECT_FRAME_SIZE_48K * 8)
-
-static BlueAECContext aec_ctx;
-// 环形缓冲区
-static int16_t i2s1_rx_ring_buf[I2S1_RX_RING_SIZE];
-static MCU_CIRCULAR_CONTEXT i2s1_rx_circular;
-
-// 重采样器
-static ResamplerContext resampler_down;   // 48→16
-static ResamplerContext resampler_up;     // 16→48
-// AEC相关缓冲区（16kHz）
-static int16_t aec_ref_buf[AEC_FRAME_SIZE_16K];
-static int16_t aec_out_buf[AEC_FRAME_SIZE_16K];
-static int16_t mic_buf[AEC_FRAME_SIZE_16K];
-// 升采样后的AEC输出（48kHz）
-static int16_t upsampled_aec[EFFECT_FRAME_SIZE_48K];
-volatile bool g_aec_ready = FALSE;        // SOURCE_AEC_OUT数据就绪标志
-
-// NS相关
-static uint8_t persistent_ns_aec[3104] __attribute__((aligned(4)));
-static uint8_t scratch_ns_aec[1024] __attribute__((aligned(4)));
-static int16_t ns_level = 3;        // 0~9，默认中等
-//static uint8_t ns_enable = 1;       // 1=启用，0=禁用
-
-// MIC延时环
-static int16_t mic_delay_buf[MIC_DELAY_BUF_SIZE];
-static MCU_CIRCULAR_CONTEXT mic_delay_circular;
-static int16_t mic_delayed[AEC_FRAME_SIZE_16K];
-
-// 临时48kHz缓冲区（用于图外转32bit和立体声扩展）
-static int16_t tmp_48k[EFFECT_FRAME_SIZE_48K];
-static int32_t stereo_32bit[EFFECT_FRAME_SIZE_48K * 2];
-static int16_t stereo_16bit[EFFECT_FRAME_SIZE_48K * 2];
 
 
 #define roboeffect_malloc T_PortMalloc
@@ -184,6 +134,9 @@ extern void uart_data_entry(void);
 
 uint8_t small_buf[64];
 uint8_t dummy_dma_buffer[16];
+
+
+static uint8_t i2s0_tx_dummy[4608];   // I2S0_TX: 384帧×2ch×4B×1.5 = 4608
 
 int connect_mode = MODE_HID;
 
@@ -244,31 +197,37 @@ void InterruptAudio_CallBack(void)
 }
 #endif
 
+static int32_t pll_adjust_step_new = 0;
+static int32_t pll_adjust_step_old = 0;
 
-void aec_and_fifo_init(void)
-{
-    // 1. 初始化AEC
-    blue_aec_init(&aec_ctx, 3);
+#define PLL_ADJ_STEP_MAX     255
+#define PLL_ADJ_LOW_THRESH   (384 * 2)      // 768 字节，水位低
+#define PLL_ADJ_HIGH_THRESH  (384 * 4)      // 1536 字节，水位高
 
-    // 2. 初始化MIC延时环
-    MCUCircular_Config(&mic_delay_circular, mic_delay_buf, MIC_DELAY_BUF_SIZE * sizeof(int16_t));
-    // 预填充静音（如果 DEFAULT_DELAY_BLK > 0）
-    int16_t silence[AEC_FRAME_SIZE_16K] = {0};
-    for (int i = 0; i < DEFAULT_DELAY_BLK; i++) {
-        MCUCircular_PutData(&mic_delay_circular, silence, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-    }
+// I2S DMA 缓冲（静态分配，链接器保证对齐）
+static uint8_t i2s1_rx_dma_buf[6912] __attribute__((aligned(32)));
+static uint8_t i2s1_tx_dma_buf[2304] __attribute__((aligned(32)));
+static uint8_t i2s0_tx_dma_buf[4608] __attribute__((aligned(32)));
 
-    // 3. 初始化NS
+// 环形缓冲区（I2S1_RX 48k 数据）
+#define I2S1_RX_RING_SIZE  (384 * 16)   // 至少容纳 8 帧 48k 数据
+static int16_t i2s1_rx_ring_buf[I2S1_RX_RING_SIZE];
+static MCU_CIRCULAR_CONTEXT i2s1_rx_circular;
 
-    int32_t ret_ns = blue_ns_init(persistent_ns_aec, scratch_ns_aec, AEC_FRAME_SIZE_16K, 16);
-    if (ret_ns == BLUENS_ERROR_OK) {
-        DBG("NS initialized: blk=%d, level=%d\n", AEC_FRAME_SIZE_16K, ns_level);
-    } else {
-        DBG("NS init failed: %d\n", ret_ns);
-//        ns_enable = 0;  // 初始化失败则禁用
-    }
+// 临时缓冲区
+static int16_t rx_48k_buf[384 * 2];          // 384 立体声 48k 样本（从环形缓冲取出）
+static int16_t ref_16k_buf[256];      // 从 MAX_OBUFF_SIZE(976) 改小
 
-}
+static int32_t tx_48k_32bit[384 * 2];         // 384 立体声 32bit 样本（I2S0_TX直通）
+static int16_t tx_48k_16bit_stereo[384 * 2];   // 48kHz 立体声 16bit 输出缓冲区
+
+
+#define STEREO_FRAME_BYTES_48K  (384 * 4)     // 48k 立体声一帧字节数（16bit）
+static int16_t raw_48k_buf[384 * 2];          // 保存原始 I2S1_RX 数据用于直通（可选）
+static int16_t mono_48k_buf[384];             // 保持
+
+ResamplerContext resampler_48to16;   // 48k -> 16k
+ResamplerContext resampler_16to48;   // 16k -> 48k
 
 
 static void led_init(void)
@@ -398,20 +357,9 @@ void roboeffect_adapt_process_source(void *context_memory, const roboeffect_adap
 	const roboeffect_adapt_device_node *adapt = table->table;
 	for(uint32_t i = 0; i < table->count; i++, adapt++)
 	{
-		  // 跳过由主循环手动填充的软件源（数据已在主循环中准备好）
-		if (strcmp("SOURCE_I2S1_RX", adapt->name) == 0 )
+		if(strcmp("SOURCE_AP82_MIC", adapt->name) == 0)
 		{
-		    continue;
-		}
-		else if (strcmp("SOURCE_AEC_NS_OUT", adapt->name) == 0)
-		{
-			 int16_t *dest = GET_SOURCE_BUFFER(context_memory, adapt);
-			    memcpy(dest, upsampled_aec, EFFECT_FRAME_SIZE_48K * sizeof(int16_t));
-			    g_aec_ready = TRUE;
-		}
-		else if (strcmp("SOURCE_AP82_MIC", adapt->name) == 0)
-		{
-		    continue;
+			AudioADC_DataGet(ADC0_MODULE, GET_SOURCE_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
 		}
 		else if(strcmp("SOURCE_LINEIN2", adapt->name) == 0)
 		{
@@ -421,10 +369,61 @@ void roboeffect_adapt_process_source(void *context_memory, const roboeffect_adap
 		{
 			AudioI2S_GetData(I2S0_MODULE, GET_SOURCE_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
 		}
-//		else if(strcmp("SOURCE_I2S1_RX", adapt->name) == 0)
-//		{
-//			AudioI2S_GetData(I2S1_MODULE, GET_SOURCE_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
-//		}
+		else if(strcmp("SOURCE_I2S1_RX", adapt->name) == 0)
+		{
+			AudioI2S_GetData(I2S1_MODULE, GET_SOURCE_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
+		}
+        else if(strcmp("SOURCE_I2S1_RX_BUF", adapt->name) == 0)
+        {
+        	 int16_t *dest = GET_SOURCE_BUFFER(context_memory, adapt);
+        	    if (dest == NULL) {
+        	        DBG("ERROR: SOURCE_I2S1_RX_BUF buffer is NULL!\n");
+        	        continue;   // 跳过本次处理，避免崩溃
+        	    }
+
+            // ---- 从环形缓冲取 384 个 48k 样本 ----
+             if (MCUCircular_GetDataLen(&i2s1_rx_circular) < STEREO_FRAME_BYTES_48K) {
+                 // 数据不足，填充静音（但主循环已用 has_enough_data 保证，此处为安全）
+            	 memset(dest, 0, 128 * sizeof(int16_t));
+                 continue;
+             }
+             MCUCircular_GetData(&i2s1_rx_circular, rx_48k_buf, STEREO_FRAME_BYTES_48K);
+             memcpy(raw_48k_buf, rx_48k_buf, STEREO_FRAME_BYTES_48K);
+
+             // ---- 降采样 48k -> 16k ----
+			 #define CHUNK_IN  96
+			 #define CHUNK_OUT 32
+             int16_t *mono_48k = mono_48k_buf;   // 用全局 mono_48k_buf[384]
+			 for (int j = 0; j < 384; j++) {
+				 mono_48k[j] = rx_48k_buf[2 * j];
+			 }
+			 int total_out = 0;
+			 for (int offset = 0; offset < 384; offset += CHUNK_IN) {
+				 int out_len = resampler_apply(&resampler_48to16,
+								mono_48k + offset,
+								ref_16k_buf + total_out,
+								CHUNK_IN);
+				 static uint32_t rs1_cnt = 0;
+				 if (++rs1_cnt % 500 == 0) {
+				     DBG("48->16: out=%d (want 32)\n", out_len);
+				 }
+				 if (out_len != CHUNK_OUT) {
+					 resampler_init(&resampler_48to16, 1, 48000, 16000, 0, 0);
+					 memset(ref_16k_buf, 0, 128 * sizeof(int16_t));
+					 break;
+				 }
+				 total_out += out_len;
+			 }
+
+             memcpy(dest, ref_16k_buf, 128 * sizeof(int16_t));
+
+             // ★ 直通：16bit 立体声 → 32bit 立体声，送 I2S0_TX
+             for (int j = 0; j < 384 * 2; j++) {
+                 tx_48k_32bit[j] = ((int32_t)rx_48k_buf[j]) << 16;
+             }
+             AudioI2S_DataSet(I2S0_MODULE, tx_48k_32bit, 384 * 2);
+
+        }
 		else
 		{
 			int16_t *buffer = GET_SOURCE_BUFFER(context_memory, adapt);
@@ -442,6 +441,7 @@ void roboeffect_adapt_process_sink(void *context_memory, const roboeffect_adapt_
 		if(strcmp("SINK_AP82_DAC0", adapt->name) == 0)
 		{
 			AudioDAC_DataSet(DAC0, GET_SINK_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
+
 		}
 		else if(strcmp("SINK_AP82_DAC1", adapt->name) == 0)
 		{
@@ -449,18 +449,28 @@ void roboeffect_adapt_process_sink(void *context_memory, const roboeffect_adapt_
 		}
 		else if(strcmp("SINK_I2S0_TX", adapt->name) == 0)
 		{
-		       // 下行：图内sink为单声道16bit，图外转32bit立体声
-		    int16_t *src = GET_SINK_BUFFER(context_memory, adapt);
-		    for (int j = 0; j < EFFECT_FRAME_SIZE_48K * 2; j++)
-		    {
-		    	stereo_32bit[j] = (int32_t)src[j] << 16;
-		    }
-		    AudioI2S_DataSet(I2S0_MODULE, stereo_32bit, EFFECT_FRAME_SIZE_48K * 2);
+			AudioI2S_DataSet(I2S0_MODULE, GET_SINK_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
 		}
 		else if(strcmp("SINK_I2S1_TX", adapt->name) == 0)
 		{
 			AudioI2S_DataSet(I2S1_MODULE, GET_SINK_BUFFER(context_memory, adapt), frame_size * MAP_BIT_WIDTH(adapt->width));
 		}
+        else if(strcmp("SINK_I2S1_TX_BUF", adapt->name) == 0)
+        {
+        	int16_t *src = GET_SINK_BUFFER(context_memory, adapt);
+        	    if (src == NULL) {
+        	        DBG("ERROR: SINK_I2S1_TX_BUF buffer is NULL!\n");
+        	        continue;
+        	    }
+        	    // 零阶保持升采样
+        	    for (int j = 0; j < 384; j++) {
+        	        int idx = j / 3;
+        	        int16_t v = src[idx];
+        	        tx_48k_16bit_stereo[2 * j]     = v;
+        	        tx_48k_16bit_stereo[2 * j + 1] = v;
+        	    }
+        	    AudioI2S_DataSet(I2S1_MODULE, tx_48k_16bit_stereo, 384);
+        }
 #ifdef CFG_APP_USB_AUDIO_MODE_EN
 		else if(strcmp("SINK_USB_OUT", adapt->name) == 0)
 		{
@@ -477,30 +487,30 @@ void roboeffect_adapt_process_sink(void *context_memory, const roboeffect_adapt_
 void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 {
 	const roboeffect_adapt_device_node *device_node;
-	I2S_DATA_LENGTH  i2s1_data_length;
+	//I2S_DATA_LENGTH i2s0_data_length, i2s1_data_length;
 
 	if(dac0_dma_ptr != NULL) roboeffect_free(dac0_dma_ptr); dac0_dma_ptr = NULL;
 	if(dac1_dma_ptr != NULL) roboeffect_free(dac1_dma_ptr); dac1_dma_ptr = NULL;
-//	if(adc0_dma_ptr != NULL) roboeffect_free(adc0_dma_ptr); adc0_dma_ptr = NULL;
-//	if(adc1_dma_ptr != NULL) roboeffect_free(adc1_dma_ptr); adc1_dma_ptr = NULL;
+	if(adc0_dma_ptr != NULL) roboeffect_free(adc0_dma_ptr); adc0_dma_ptr = NULL;
+	if(adc1_dma_ptr != NULL) roboeffect_free(adc1_dma_ptr); adc1_dma_ptr = NULL;
 
-	if(i2s0_tx_dma_ptr != NULL) roboeffect_free(i2s0_tx_dma_ptr); i2s0_tx_dma_ptr = NULL;
-	if(i2s0_rx_dma_ptr != NULL) roboeffect_free(i2s0_rx_dma_ptr); i2s0_rx_dma_ptr = NULL;
-	if(i2s1_tx_dma_ptr != NULL) roboeffect_free(i2s1_tx_dma_ptr); i2s1_tx_dma_ptr = NULL;
-	if(i2s1_rx_dma_ptr != NULL) roboeffect_free(i2s1_rx_dma_ptr); i2s1_rx_dma_ptr = NULL;
+//	if(i2s0_tx_dma_ptr != NULL) roboeffect_free(i2s0_tx_dma_ptr); i2s0_tx_dma_ptr = NULL;
+//	if(i2s0_rx_dma_ptr != NULL) roboeffect_free(i2s0_rx_dma_ptr); i2s0_rx_dma_ptr = NULL;
+//	if(i2s1_tx_dma_ptr != NULL) roboeffect_free(i2s1_tx_dma_ptr); i2s1_tx_dma_ptr = NULL;
+//	if(i2s1_rx_dma_ptr != NULL) roboeffect_free(i2s1_rx_dma_ptr); i2s1_rx_dma_ptr = NULL;
 
 	//hardware data reset:
 	AudioDAC_Disable(DAC0);
 	AudioDAC_Disable(DAC1);
-//	AudioADC_Disable(ADC0_MODULE);
-//	AudioADC_Disable(ADC1_MODULE);
+	AudioADC_Disable(ADC0_MODULE);
+	AudioADC_Disable(ADC1_MODULE);
 	I2S_ModuleDisable(I2S1_MODULE);
 	I2S_ModuleDisable(I2S0_MODULE);
 
 	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_DAC0_TX);
 	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_DAC1_TX);
-//	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_ADC0_RX);
-//	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_ADC1_RX);
+	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_ADC0_RX);
+	DMA_ChannelDisable(PERIPHERAL_ID_AUDIO_ADC1_RX);
 	DMA_ChannelDisable(PERIPHERAL_ID_I2S1_TX);
 	DMA_ChannelDisable(PERIPHERAL_ID_I2S1_RX);
 	DMA_ChannelDisable(PERIPHERAL_ID_I2S0_RX);
@@ -518,8 +528,8 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 #else
 	if((SampleRate == 11025) || (SampleRate == 22050) || (SampleRate == 44100))
 	{
-//		Clock_AudioMclkSel(AUDIO_ADC0, PLL_CLOCK1);
-//		Clock_AudioMclkSel(AUDIO_ADC1, PLL_CLOCK1);
+		Clock_AudioMclkSel(AUDIO_ADC0, PLL_CLOCK1);
+		Clock_AudioMclkSel(AUDIO_ADC1, PLL_CLOCK1);
 		Clock_AudioMclkSel(AUDIO_DAC0, PLL_CLOCK1);
 		Clock_AudioMclkSel(AUDIO_DAC1, PLL_CLOCK1);
 		Clock_AudioMclkSel(AUDIO_I2S0, PLL_CLOCK1);
@@ -527,8 +537,8 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 	}
 	else
 	{
-//		Clock_AudioMclkSel(AUDIO_ADC0, PLL_CLOCK2);
-//		Clock_AudioMclkSel(AUDIO_ADC1, PLL_CLOCK2);
+		Clock_AudioMclkSel(AUDIO_ADC0, PLL_CLOCK2);
+		Clock_AudioMclkSel(AUDIO_ADC1, PLL_CLOCK2);
 		Clock_AudioMclkSel(AUDIO_DAC0, PLL_CLOCK2);
 		Clock_AudioMclkSel(AUDIO_DAC1, PLL_CLOCK2);
 		Clock_AudioMclkSel(AUDIO_I2S0, PLL_CLOCK2);
@@ -539,19 +549,20 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 
 	AudioDAC_SampleRateSet(DAC0, SampleRate);
 	AudioDAC_SampleRateSet(DAC1, SampleRate);
-//	AudioADC_SampleRateSet(ADC0_MODULE, SampleRate);
-//	AudioADC_SampleRateSet(ADC1_MODULE, SampleRate);
-	I2S_SampleRateSet(I2S1_MODULE, SampleRate);
-	I2S_SampleRateSet(I2S0_MODULE, SampleRate);
+	AudioADC_SampleRateSet(ADC0_MODULE, SampleRate);
+	AudioADC_SampleRateSet(ADC1_MODULE, SampleRate);
+	I2S_SampleRateSet(I2S1_MODULE, 48000);
+	I2S_SampleRateSet(I2S0_MODULE, 48000);
 
 	//I2S0,1 master/slave mode switch
+/*
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S0_RX")) != NULL || (device_node = adapt_get_item(g_adapter, "SINK_I2S0_TX")) != NULL)
 	{
-//		i2s0_data_length = (device_node->width == BITS_16)?(I2S_LENGTH_16BITS):(I2S_LENGTH_24BITS);
+		i2s0_data_length = (device_node->width == BITS_16)?(I2S_LENGTH_16BITS):(I2S_LENGTH_24BITS);
 #ifdef EXTERNAL_CLK
 		I2S_SetSlaveMode(I2S0_MODULE, I2S_FORMAT_I2S, i2s_data_length);
 #else
-		I2S_SetMasterMode(I2S0_MODULE, I2S_FORMAT_I2S, I2S_LENGTH_32BITS);
+		I2S_SetMasterMode(I2S0_MODULE, I2S_FORMAT_I2S, i2s0_data_length);
 #endif
 	}
 
@@ -561,16 +572,23 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 #ifdef EXTERNAL_CLK
 		I2S_SetSlaveMode(I2S1_MODULE, I2S_FORMAT_I2S, i2s_data_length);
 #else
-		I2S_SetSlaveMode(I2S1_MODULE, I2S_FORMAT_I2S, i2s1_data_length);
+		I2S_SetMasterMode(I2S1_MODULE, I2S_FORMAT_I2S, i2s1_data_length);
 #endif
 	}
+*/
+	// I2S1: 从设备, 16bit, I2S 格式（由外部 Codec 提供 BCLK/LRCLK）
+	I2S_SetSlaveMode(I2S1_MODULE, I2S_FORMAT_I2S, I2S_LENGTH_16BITS);
+//	I2S_AlignModeSet(I2S1_MODULE, I2S_LOW_BITS_ACTIVE);
+	I2S_ModuleEnable(I2S1_MODULE);
+	// I2S0: 主设备, 32bit, I2S 格式（内部产生 BCLK/LRCLK）
+	I2S_SetMasterMode(I2S0_MODULE, I2S_FORMAT_I2S, I2S_LENGTH_32BITS);
 
 	AudioDAC_FuncReset(DAC0);//DAC bug fixed
 	AudioDAC_FuncReset(DAC1);//DAC bug fixed
-//	AudioADC_FuncReset(ADC0_MODULE);
-//	AudioADC_FuncReset(ADC1_MODULE);
-	RST_I2SModule(I2S0_MODULE);
-	RST_I2SModule(I2S1_MODULE);
+	// AudioADC_FuncReset(ADC0_MODULE);
+	// AudioADC_FuncReset(ADC1_MODULE);
+//	RST_I2SModule(I2S0_MODULE);
+//	RST_I2SModule(I2S1_MODULE);
 
 	if(FrameSize)
 	{
@@ -600,10 +618,7 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 			DMA_CircularConfig(PERIPHERAL_ID_AUDIO_ADC0_RX, FrameSize/2, adc0_dma_ptr, FrameSize * MAP_BIT_WIDTH(device_node->width));
 			// DBG("SOURCE_AP82_MIC opened: %d\n", adc0_dma_ptr);
 		}
-		if((device_node = adapt_get_item(g_adapter, "SOURCE_AEC_NS_OUT")) != NULL)
-		{
 
-		}
 		if((device_node = adapt_get_item(g_adapter, "SOURCE_LINEIN2")) != NULL)
 		{
 			adc1_dma_ptr = roboeffect_malloc(FrameSize * MAP_BIT_WIDTH(device_node->width));
@@ -612,6 +627,30 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 			// DBG("SOURCE_LINEIN2 opened: %d\n", adc1_dma_ptr);
 		}
 
+		   if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX_BUF")) != NULL)
+				{
+				i2s1_rx_dma_ptr = i2s1_rx_dma_buf;
+						memset(i2s1_rx_dma_ptr, 0x00, sizeof(i2s1_rx_dma_buf));
+						DMA_CircularConfig(PERIPHERAL_ID_I2S1_RX, sizeof(i2s1_rx_dma_buf)/2,
+										   i2s1_rx_dma_ptr, sizeof(i2s1_rx_dma_buf));
+				}
+		 if((device_node = adapt_get_item(g_adapter, "SINK_I2S1_TX_BUF")) != NULL)
+			{
+				i2s1_tx_dma_ptr = i2s1_tx_dma_buf;
+					memset(i2s1_tx_dma_ptr, 0x00, sizeof(i2s1_tx_dma_buf));
+					DMA_CircularConfig(PERIPHERAL_ID_I2S1_TX, sizeof(i2s1_tx_dma_buf)/2,
+									   i2s1_tx_dma_ptr, sizeof(i2s1_tx_dma_buf));
+
+			}
+	//     if((device_node = adapt_get_item(g_adapter, "SINK_I2S0_TX")) != NULL)
+	        {
+	            i2s0_tx_dma_ptr = i2s0_tx_dma_buf;
+	               memset(i2s0_tx_dma_ptr, 0x00, sizeof(i2s0_tx_dma_buf));
+	               DMA_CircularConfig(PERIPHERAL_ID_I2S0_TX, sizeof(i2s0_tx_dma_buf)/2,
+	                                  i2s0_tx_dma_ptr, sizeof(i2s0_tx_dma_buf));
+
+	        }
+/*
 		if((device_node = adapt_get_item(g_adapter, "SINK_I2S1_TX")) != NULL)
 		{
 			i2s1_tx_dma_ptr = roboeffect_malloc(FrameSize * MAP_BIT_WIDTH(device_node->width));
@@ -630,19 +669,10 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 
 		if((device_node = adapt_get_item(g_adapter, "SINK_I2S0_TX")) != NULL)
 		{
-		    // 实际发送 32bit 立体声数据（图中是 16bit，图外转换）
-		    // 每帧数据量 = frame_size(384) × 2通道 × 4字节 = 3072 字节
-		    uint32_t bytes_per_frame = g_user_effect_list->frame_size * 2 * 4;
-		    // 沿用原厂 1.5 倍缓冲策略（缓冲区大小 = 1.5 × 每帧字节数）
-		    uint32_t dma_buffer_bytes = bytes_per_frame + bytes_per_frame / 2;  // 4608 字节
-		    // 半满中断阈值（以样本数为单位，因为 DMA_CircularConfig 需要样本数）
-		    // 半满时缓冲区中已有 bytes_per_frame/2 字节，对应样本数 = (bytes_per_frame/2) / 4
-		    uint32_t threshold = (dma_buffer_bytes / 2) / 4;  // 4608/2/4 = 576 样本
-
-		    i2s0_tx_dma_ptr = roboeffect_malloc(dma_buffer_bytes);
-		    memset(i2s0_tx_dma_ptr, 0x00, dma_buffer_bytes);
-		    DMA_CircularConfig(PERIPHERAL_ID_I2S0_TX, threshold, i2s0_tx_dma_ptr, dma_buffer_bytes);
-		    DBG("SINK_I2S0_TX opened: buffer=%d bytes, threshold=%d\n", dma_buffer_bytes, threshold);
+			i2s0_tx_dma_ptr = roboeffect_malloc(FrameSize * MAP_BIT_WIDTH(device_node->width));
+			memset(i2s0_tx_dma_ptr, 0x00, FrameSize * MAP_BIT_WIDTH(device_node->width));
+			DMA_CircularConfig(PERIPHERAL_ID_I2S0_TX, FrameSize/2, i2s0_tx_dma_ptr, FrameSize * MAP_BIT_WIDTH(device_node->width));
+			// DBG("SINK_I2S1_TX opened: %d\n", i2s1_tx_dma_ptr);
 		}
 
 		if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S0_RX")) != NULL)
@@ -652,23 +682,23 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 			DMA_CircularConfig(PERIPHERAL_ID_I2S0_RX, FrameSize/2, i2s0_rx_dma_ptr, FrameSize * MAP_BIT_WIDTH(device_node->width));
 			// DBG("SOURCE_I2S1_RX opened: %d\n", i2s1_rx_dma_ptr);
 		}
-
+*/
 		// DMA_CircularConfig(PERIPHERAL_ID_I2S0_RX, FrameSize/2, AudioI2S2Buf, FrameSize * 2);
 	}
 	else
 	{
 		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_DAC0_TX);
 		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_DAC1_TX);
-//		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_ADC0_RX);
-//		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_ADC1_RX);
+		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_ADC0_RX);
+		DMA_CircularFIFOClear(PERIPHERAL_ID_AUDIO_ADC1_RX);
 		DMA_CircularFIFOClear(PERIPHERAL_ID_I2S1_TX);
 		DMA_CircularFIFOClear(PERIPHERAL_ID_I2S1_RX);
 		DMA_CircularFIFOClear(PERIPHERAL_ID_I2S0_TX);
 		DMA_CircularFIFOClear(PERIPHERAL_ID_I2S0_RX);
 	}
 
-	DMA_InterruptFlagClear(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT);
-	DMA_InterruptFlagClear(PERIPHERAL_ID_I2S0_RX, DMA_ERROR_INT);
+//	DMA_InterruptFlagClear(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT);
+//	DMA_InterruptFlagClear(PERIPHERAL_ID_I2S0_RX, DMA_ERROR_INT);
 
 	if(adapt_get_item(g_adapter, "SINK_AP82_DAC0"))
 	{
@@ -696,24 +726,21 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 		AudioADC_LREnable(ADC1_MODULE, TRUE, TRUE);
 	}
 
-	if(adapt_get_item(g_adapter, "SOURCE_AEC_NS_OUT"))
+	if(adapt_get_item(g_adapter, "SINK_I2S1_TX_BUF"))
 	{
-		DBG("SOURCE_AEC_NS_OUT enabled\n");
-	}
 
-	if(adapt_get_item(g_adapter, "SINK_I2S1_TX"))
-	{
 		DMA_ChannelEnable(PERIPHERAL_ID_I2S1_TX);
-		I2S_ModuleEnable(I2S1_MODULE);
+		I2S_ModuleTxEnable(I2S1_MODULE);
 	} 
 	
-	if(adapt_get_item(g_adapter, "SOURCE_I2S1_RX"))
+	if(adapt_get_item(g_adapter, "SOURCE_I2S1_RX_BUF"))
 	{
+
 		DMA_ChannelEnable(PERIPHERAL_ID_I2S1_RX);
-		I2S_ModuleEnable(I2S1_MODULE);
+		I2S_ModuleRxEnable(I2S1_MODULE);
 	}
 
-	if(adapt_get_item(g_adapter, "SINK_I2S0_TX"))
+//	if(adapt_get_item(g_adapter, "SINK_I2S0_TX"))
 	{
 		DMA_ChannelEnable(PERIPHERAL_ID_I2S0_TX);
 		I2S_ModuleEnable(I2S0_MODULE);
@@ -725,28 +752,14 @@ void hardware_pipe_reset(uint32_t SampleRate, uint32_t FrameSize)
 		I2S_ModuleEnable(I2S0_MODULE);
 	}
 
-//	 DMA_ChannelEnable(PERIPHERAL_ID_I2S0_RX);
-//	 I2S_ModuleEnable(I2S0_MODULE);
+	// DMA_ChannelEnable(PERIPHERAL_ID_I2S0_RX);
+	// I2S_ModuleEnable(I2S0_MODULE);
 
 }
 
 static bool has_enough_data(const roboeffect_adapt_device_table *table, uint32_t frame_size)
 {
-	bool down_ready = FALSE, up_ready = FALSE;
 	const roboeffect_adapt_device_node *device_node;
-    // 检查下行 SOURCE_I2S1_RX
-    if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX")) != NULL)
-    {
-    	if(MCUCircular_GetDataLen(&i2s1_rx_circular) >= EFFECT_FRAME_SIZE_48K * sizeof(int16_t))
-    	down_ready = TRUE;
-    }
-
-    // 检查上行 SOURCE_AEC_NS_OUT
-    if((device_node = adapt_get_item(g_adapter, "SOURCE_AEC_NS_OUT")) != NULL)
-    {
-    	 if(g_aec_ready)
-    	 up_ready = TRUE;
-    }
 
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_AP82_MIC")) != NULL)
 	{
@@ -754,7 +767,6 @@ static bool has_enough_data(const roboeffect_adapt_device_table *table, uint32_t
 			return TRUE;
 		else
 			return FALSE;
-
 	}
 
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_LINEIN2")) != NULL)
@@ -764,7 +776,14 @@ static bool has_enough_data(const roboeffect_adapt_device_table *table, uint32_t
 		else
 			return FALSE;
 	}
-
+	if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX_BUF")) != NULL)
+	{
+		if (MCUCircular_GetDataLen(&i2s1_rx_circular) >= STEREO_FRAME_BYTES_48K)
+		    return TRUE;
+		else
+		    return FALSE;
+	}
+/*
 	if((device_node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX")) != NULL)
 	{
 		if(AudioI2S_GetDataLen(I2S1_MODULE) >= frame_size * MAP_BIT_WIDTH(device_node->width))
@@ -780,8 +799,8 @@ static bool has_enough_data(const roboeffect_adapt_device_table *table, uint32_t
 		else
 			return FALSE;
 	}
-
-	return (down_ready && up_ready);
+*/
+	return FALSE;
 
 }
 
@@ -997,7 +1016,7 @@ void determind_comm_mode(void)
 	//NVIC_SetPriority(Timer3_IRQn, 1);
 	//NVIC_SetPriority(Timer4_IRQn, 1);
 
-	if (!(GPIO_RegOneBitGet(GPIO_B_IN, GPIO_INDEX0) & 0x01))
+	if ((GPIO_RegOneBitGet(GPIO_B_IN, GPIO_INDEX0) & 0x01))
 	{
 		connect_mode = MODE_HID;
 		
@@ -1031,6 +1050,184 @@ void determind_comm_mode(void)
 
 	GPIO_PortBModeSet(GPIO_INDEX1, 4);
 	GPIO_PortBModeSet(GPIO_INDEX0, 3);
+}
+
+/**
+ * @brief 独立初始化 I2S1_RX, I2S1_TX, I2S0_TX
+ *        完全参照原厂 I2S 例程风格，固定 48kHz
+ *        I2S1: 从设备, 16bit, I2S 格式
+ *        I2S0: 主设备, 32bit, I2S 格式
+ *        注意：GPIO 引脚需在外部提前配置
+ */
+void i2s_hardware_init(void)
+{
+    // ---------- 1. 释放已有 DMA 缓冲区（防止内存泄漏） ----------
+    if (i2s0_tx_dma_ptr != NULL) {
+        roboeffect_free(i2s0_tx_dma_ptr);
+        i2s0_tx_dma_ptr = NULL;
+    }
+    if (i2s1_tx_dma_ptr != NULL) {
+        roboeffect_free(i2s1_tx_dma_ptr);
+        i2s1_tx_dma_ptr = NULL;
+    }
+    if (i2s1_rx_dma_ptr != NULL) {
+        roboeffect_free(i2s1_rx_dma_ptr);
+        i2s1_rx_dma_ptr = NULL;
+    }
+
+    // ---------- 2. 禁用 I2S 模块和 DMA 通道 ----------
+    I2S_ModuleDisable(I2S1_MODULE);
+    I2S_ModuleDisable(I2S0_MODULE);
+    DMA_ChannelDisable(PERIPHERAL_ID_I2S1_TX);
+    DMA_ChannelDisable(PERIPHERAL_ID_I2S1_RX);
+    DMA_ChannelDisable(PERIPHERAL_ID_I2S0_TX);
+
+    // ★ 3. 先复位！让模块回到干净状态
+    RST_I2SModule(I2S0_MODULE);
+    RST_I2SModule(I2S1_MODULE);
+
+    // ---------- 4. 配置时钟源（统一使用 PLL_CLOCK2，对应 48kHz） ----------
+    Clock_AudioMclkSel(AUDIO_I2S0, PLL_CLOCK2);
+    Clock_AudioMclkSel(AUDIO_I2S1, PLL_CLOCK2);
+
+    // ---------- 5. 设置采样率为 48kHz ----------
+    I2S_SampleRateSet(I2S1_MODULE, 48000);
+    I2S_SampleRateSet(I2S0_MODULE, 48000);
+
+
+    // ---------- 6. 配置 I2S 工作模式 ----------
+    // I2S1: 从设备, 16bit, I2S 格式（由外部 Codec 提供 BCLK/LRCLK）
+    I2S_SetSlaveMode(I2S1_MODULE, I2S_FORMAT_I2S, I2S_LENGTH_16BITS);
+
+    // I2S0: 主设备, 32bit, I2S 格式（内部产生 BCLK/LRCLK）
+    I2S_SetMasterMode(I2S0_MODULE, I2S_FORMAT_I2S, I2S_LENGTH_32BITS);
+
+
+    // ---------- 7. 分配 DMA 缓冲区并配置循环 DMA ----------
+    // 7.1 I2S1_RX: 48kHz, 16bit, 立体声, 帧大小 384 样本 (8ms)
+    //     缓冲区大小 = 384 * 2(ch) * 2(字节) = 1536, 1.5 倍 = 2304
+    {
+        uint32_t dma_size = 384 * 2 * 2;          // 1536
+        dma_size = dma_size + dma_size / 2;       // 2304
+        i2s1_rx_dma_ptr = roboeffect_malloc(dma_size);
+        if (i2s1_rx_dma_ptr) {
+            memset(i2s1_rx_dma_ptr, 0x00, dma_size);
+            DMA_CircularConfig(PERIPHERAL_ID_I2S1_RX, dma_size/2, i2s1_rx_dma_ptr, dma_size);
+        } else {
+            DBG("ERROR: i2s1_rx_dma_ptr malloc failed\n");
+        }
+    }
+
+    // 7.2 I2S1_TX: 48kHz, 16bit, 立体声, 帧大小 384 样本
+    {
+        uint32_t dma_size = 384 * 2 * 2;          // 1536
+        dma_size = dma_size + dma_size / 2;       // 2304
+        i2s1_tx_dma_ptr = roboeffect_malloc(dma_size);
+        if (i2s1_tx_dma_ptr) {
+            memset(i2s1_tx_dma_ptr, 0x00, dma_size);
+            DMA_CircularConfig(PERIPHERAL_ID_I2S1_TX, dma_size/2, i2s1_tx_dma_ptr, dma_size);
+        } else {
+            DBG("ERROR: i2s1_tx_dma_ptr malloc failed\n");
+        }
+    }
+
+    // 7.3 I2S0_TX: 48kHz, 32bit, 立体声, 帧大小 384 样本
+    //     缓冲区大小 = 384 * 2(ch) * 4(字节) = 3072, 1.5 倍 = 4608
+    {
+        uint32_t dma_size = 384 * 2 * 4;          // 3072
+        dma_size = dma_size + dma_size / 2;       // 4608
+        i2s0_tx_dma_ptr = roboeffect_malloc(dma_size);
+        if (i2s0_tx_dma_ptr) {
+            memset(i2s0_tx_dma_ptr, 0x00, dma_size);
+            DMA_CircularConfig(PERIPHERAL_ID_I2S0_TX, dma_size/2, i2s0_tx_dma_ptr, dma_size);
+        } else {
+            DBG("ERROR: i2s0_tx_dma_ptr malloc failed\n");
+        }
+    }
+
+    // ---------- 8. 清除中断标志 ----------
+    DMA_InterruptFlagClear(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT);
+    DMA_InterruptFlagClear(PERIPHERAL_ID_I2S1_TX, DMA_ERROR_INT);
+    DMA_InterruptFlagClear(PERIPHERAL_ID_I2S0_TX, DMA_ERROR_INT);
+
+    // ---------- 9. 使能 DMA 通道 ----------
+    DMA_ChannelEnable(PERIPHERAL_ID_I2S1_RX);
+    I2S_ModuleEnable(I2S1_MODULE);
+
+    DMA_ChannelEnable(PERIPHERAL_ID_I2S1_TX);
+    I2S_ModuleEnable(I2S1_MODULE);
+
+    DMA_ChannelEnable(PERIPHERAL_ID_I2S0_TX);
+    I2S_ModuleEnable(I2S0_MODULE);
+
+
+    DBG("I2S independent init OK: I2S1_RX/TX 48k 16bit(Slave), I2S0_TX 48k 32bit(Master)\n");
+}
+
+void PLL_Adjust_Init(void)
+{
+ //   Clock_AudioPllClockAdjust(PLL_CLK_1, 0, 0);
+    Clock_AudioPllClockAdjust(PLL_CLK_2, 0, 0);
+    pll_adjust_step_new = 0;
+    pll_adjust_step_old = 0;
+}
+
+// 你的场景：只监听 I2S1_RX
+static int is_audio_i2s1_rx_on(void)
+{
+    return adapt_get_item(g_adapter, "SOURCE_I2S1_RX_BUF") ? 1 : 0;
+}
+
+void PLL_Adjust_Loop(void)
+{
+ //   Timer_InterruptFlagClear(TIMER4, UPDATE_INTERRUPT_SRC);
+
+    if (is_audio_i2s1_rx_on())
+    {
+        uint16_t dma_len = DMA_CircularDataLenGet(PERIPHERAL_ID_I2S1_RX);
+
+        if (dma_len > PLL_ADJ_HIGH_THRESH)
+        {
+            // 数据积压，内部处理太慢 → 加快 PLL
+            if (pll_adjust_step_new < 0)
+                pll_adjust_step_new = 0;
+            else {
+                pll_adjust_step_new += 1;
+                if (pll_adjust_step_new > PLL_ADJ_STEP_MAX)
+                    pll_adjust_step_new = PLL_ADJ_STEP_MAX;
+            }
+        }
+        else if (dma_len < PLL_ADJ_LOW_THRESH)
+        {
+            // 数据被吃空，内部处理太快 → 减慢 PLL
+            if (pll_adjust_step_new > 0)
+                pll_adjust_step_new = 0;
+            else {
+                pll_adjust_step_new -= 1;
+                if (pll_adjust_step_new < -PLL_ADJ_STEP_MAX)
+                    pll_adjust_step_new = -PLL_ADJ_STEP_MAX;
+            }
+        }
+        // 768~1536 之间是死区，不调整
+
+        // 只在变化时才写 PLL 寄存器（减少抖动）
+        if (pll_adjust_step_new != pll_adjust_step_old)
+        {
+            Clock_AudioPllClockAdjust(PLL_CLK_1,
+                (pll_adjust_step_new >= 0) ? 1 : 0,
+                abs(pll_adjust_step_new));
+            Clock_AudioPllClockAdjust(PLL_CLK_2,
+                (pll_adjust_step_new >= 0) ? 1 : 0,
+                abs(pll_adjust_step_new));
+            pll_adjust_step_old = pll_adjust_step_new;
+        }
+        static uint32_t adj_dbg = 0;
+           if (++adj_dbg % 50 == 0) {   // 20ms × 50 = 1秒一次
+               DBG("PLL: step=%d, dma_len=%u\n",
+                   pll_adjust_step_new,
+                   dma_len);
+           }
+    }
 }
 
 /*
@@ -1149,6 +1346,11 @@ int main(void)//CC_TODO: main
 		DBG("I2C mode.\n");
 	}
 
+	Timer_Config(TIMER4, 20000, 0);       // 20000us = 20ms 周期
+	Timer_Start(TIMER4);
+	NVIC_SetPriority(Timer4_IRQn, 1);
+	NVIC_EnableIRQ(Timer4_IRQn);
+
 	roboeffect_mm_init();
 
 	DBG("\n");
@@ -1200,15 +1402,15 @@ int main(void)//CC_TODO: main
 	AudioADC_PGASel(ADC1_MODULE, CHANNEL_RIGHT, INPUT_NONE);
 	AudioADC_PGASel(ADC1_MODULE, CHANNEL_LEFT, INPUT_NONE);
 
-//	AudioADC_PGASel(ADC1_MODULE, CHANNEL_RIGHT, RIGHT_CHANNEL_MUSIC);
-//	AudioADC_PGASel(ADC1_MODULE, CHANNEL_LEFT, LEFT_CHANNEL_MUSIC);
-//
-//	AudioADC_PGAGainSet(ADC1_MODULE, CHANNEL_RIGHT, RIGHT_CHANNEL_MUSIC, PGA_GAIN_MUSIC, 4);//18, 12, 44=0dB, 32
-//	AudioADC_PGAGainSet(ADC1_MODULE, CHANNEL_LEFT, LEFT_CHANNEL_MUSIC, PGA_GAIN_MUSIC, 4);//18, 12, 44=0dB, 32
+	AudioADC_PGASel(ADC1_MODULE, CHANNEL_RIGHT, RIGHT_CHANNEL_MUSIC);
+	AudioADC_PGASel(ADC1_MODULE, CHANNEL_LEFT, LEFT_CHANNEL_MUSIC);
+
+	AudioADC_PGAGainSet(ADC1_MODULE, CHANNEL_RIGHT, RIGHT_CHANNEL_MUSIC, PGA_GAIN_MUSIC, 4);//18, 12, 44=0dB, 32
+	AudioADC_PGAGainSet(ADC1_MODULE, CHANNEL_LEFT, LEFT_CHANNEL_MUSIC, PGA_GAIN_MUSIC, 4);//18, 12, 44=0dB, 32
 
 	//Mic1 Mic2 digital config
-	AudioADC_DigitalInit(ADC0_MODULE, 16000, AudioADC1Buf, sizeof(AudioADC1Buf));
-//	AudioADC_DigitalInit(ADC1_MODULE, 44100, (void*)dummy_dma_buffer, sizeof(dummy_dma_buffer));
+	AudioADC_DigitalInit(ADC0_MODULE, 44100, (void*)dummy_dma_buffer, sizeof(dummy_dma_buffer));
+	AudioADC_DigitalInit(ADC1_MODULE, 44100, (void*)dummy_dma_buffer, sizeof(dummy_dma_buffer));
 #if defined(CFG_APP_USB_AUDIO_MODE_EN)
 	extern void OtgMicFifoConfig(uint8_t *Buf, uint16_t Len);
 	OtgMicFifoConfig((uint8_t *)AudioOtgMicBuf, sizeof(AudioOtgMicBuf));
@@ -1218,14 +1420,14 @@ int main(void)//CC_TODO: main
 #ifdef EXTERNAL_CLK
 	GPIO_PortAModeSet(GPIOA8, 1);//mclk
 #else
-	GPIO_PortAModeSet(GPIOA8, 2);//mclk
+//	GPIO_PortAModeSet(GPIOA8, 1);//mclk
 #endif
 	GPIO_PortAModeSet(GPIOA9, 1);//lrclk
 	GPIO_PortAModeSet(GPIOA10, 2);//bclk
 	GPIO_PortAModeSet(GPIOA11, 3);//dout
 	GPIO_PortAModeSet(GPIOA12, 2);//din
 
-//	GPIO_PortAModeSet(GPIOA24, 6);//mclk
+	// GPIO_PortAModeSet(GPIOA24, 6);//mclk
 	GPIO_PortAModeSet(GPIOA25, 4);//lrclk
 	GPIO_PortAModeSet(GPIOA26, 4);//bclk
 	GPIO_PortAModeSet(GPIOA27, 6);//dout
@@ -1236,16 +1438,18 @@ int main(void)//CC_TODO: main
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX10);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX11);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX12);
+
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX24);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX25);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX26);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX27);
 	GPIO_RegOneBitSet(GPIO_A_DS, GPIO_INDEX28);
 
-	AudioI2S_TXInit(I2S1_MODULE, 44100, dummy_dma_buffer, sizeof(dummy_dma_buffer));
-	AudioI2S_RXInit(I2S1_MODULE, 44100, dummy_dma_buffer, sizeof(dummy_dma_buffer));
-	AudioI2S_TXInit(I2S0_MODULE, 44100, dummy_dma_buffer, sizeof(dummy_dma_buffer));
-	AudioI2S_RXInit(I2S0_MODULE, 44100, dummy_dma_buffer, sizeof(dummy_dma_buffer));
+//	AudioI2S_TXInit(I2S1_MODULE, 48000, i2s1_tx_dummy, sizeof(i2s1_tx_dummy));
+//	AudioI2S_RXInit(I2S1_MODULE, 48000, i2s1_rx_dummy, sizeof(i2s1_rx_dummy));
+	AudioI2S_TXInit(I2S0_MODULE, 48000, i2s0_tx_dummy, sizeof(i2s0_tx_dummy));
+//	AudioI2S_RXInit(I2S0_MODULE, 44100, dummy_dma_buffer, sizeof(dummy_dma_buffer));
+
 
 #ifdef USE_CODEC_PARAMTERS
 	load_hardware_fr_params_raw((uint8_t *)g_user_codec_parameters);
@@ -1261,306 +1465,280 @@ int main(void)//CC_TODO: main
 	// play_audio_data(audio_mp3_data1, sizeof(audio_mp3_data1));
 	// while(1);
 
-	// 重采样器初始化
-	resampler_init(&resampler_down, 1, 48000, 16000, 0, 0);
-	resampler_init(&resampler_up,   1, 16000, 48000, 0, 0);
-
-	// 环形缓冲区初始化
+	// 初始化 I2S1_RX 环形缓冲
 	MCUCircular_Config(&i2s1_rx_circular, i2s1_rx_ring_buf, I2S1_RX_RING_SIZE * sizeof(int16_t));
+	DBG("MCUCircular_Config: ok\n");
 
-	aec_and_fifo_init();//AEC+NS
+//	PLL_Adjust_Init();
+	// 初始化重采样器
+	resampler_init(&resampler_48to16, 1, 48000, 16000, 0, 0);
+	DBG("resampler_48to16: ok\n");
+	resampler_init(&resampler_16to48, 1, 16000, 48000, 0, 0);
+	DBG("resampler_16to48: ok\n");
 
-	AudioADC_DMARestart(ADC0_MODULE, AudioADC1Buf, sizeof(AudioADC1Buf));
-//	AudioADC_DMARestart(ADC1_MODULE, AudioADC2Buf, sizeof(AudioADC2Buf));
+	// I2S 初始化后加
+	I2S_SampleRateCheckInterruptClr(I2S1_MODULE);
+	I2S_SampleRateCheckInterruptEnable(I2S1_MODULE);
 
-	hardware_pipe_reset(g_user_effect_list->sample_rate, g_user_effect_list->frame_size);
-
-	roboeffect_size = roboeffect_estimate_memory_size(g_user_effect_steps, g_user_effect_list, g_user_effect_parameters);
-	if(roboeffect_size >= 0)
-		DBG("current memory: %d\n", roboeffect_size);
-	else
+	while(1)
 	{
-		DBG("Get context size failed, Error: %s\n", err_str[roboeffect_size+256]);
-		goto error;
-	}
+		static uint32_t counter = 0, rst_cnt = 0, mute_count = 16;
 
-	//find the biggest memory in effect list
-	for(uint32_t i = 0; i<g_user_effect_list->count; i++)
-	{
-		int32_t size;
-		size = roboeffect_estimate_effect_size(i + 0x81, g_user_effect_list, g_user_effect_parameters);
-		// DBG("addr=0x%02X, size=%d\n", i + 0x80, size);
-		if(size > one_effect_size)
-			one_effect_size = size;
-	}
+		//select current flow chart, now we have two flow charts by user_effect_flow.c and user_effect_flow1.c
+		g_user_effect_list = &user_effect_list_demo;
+		g_user_effect_steps = &user_effect_steps_demo;
+		g_user_effect_parameters = user_effect_parameters_demo_NewMode;
+		g_user_codec_parameters = user_module_parameters_demo_NewMode;
+		g_user_flow_script = user_effects_script_demo;
+		g_adapter = &demo_adapt_device_table;
+		
+		roboeffect_size = roboeffect_estimate_frame_size(g_user_effect_list, g_user_effect_parameters);
+		DBG("estimate frame size = %d:%d\n", g_user_effect_list->frame_size, roboeffect_size);
 
-	roboeffect_size_max = roboeffect_free_space() - 16;//consume all remaining memory
-	// roboeffect_size_max = roboeffect_size;
-	DBG("Heap free space: %d\n", roboeffect_size_max);
+		//update codec 
+		hardware_pipe_reset(g_user_effect_list->sample_rate, g_user_effect_list->frame_size);
+//		i2s_hardware_init();
 
-	/**
-		* malloc context memory
-	*/
-	if((context_memory = roboeffect_malloc(roboeffect_size_max)) == NULL)
-	{
-		DBG("context_memory is NULL\n");
-		goto error;
-	}
-
-	/**
-		* initial roboeffect context memory
-	*/
-	if(ROBOEFFECT_ERROR_OK != (roboeffect_ret = roboeffect_init(context_memory, roboeffect_size_max, g_user_effect_steps, g_user_effect_list, g_user_effect_parameters)) )
-	{
-
-	    DBG("roboeffect_init failed. %d\n", roboeffect_ret);
-		goto error;
-	}
-	robo_init_err = FALSE;
-	/**
-		* get real-time frame size
-	*/
-	frame_size = g_user_effect_list->frame_size;
-	DBG("frame size = %d, free = %d, sr = %d\n", frame_size, roboeffect_get_free_memory_space(context_memory), g_user_effect_list->sample_rate);
-
-	need_update_status = 1;//tell acpworkbench to refresh effects data
-
-	//get source/sink buffer
-    #ifdef CFG_LOW_POWER_MODE
-	DMA_InterruptFunSet(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, InterruptAudio_CallBack);
-	DMA_InterruptEnable(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, 1);
-    #endif
-
-	AudioDAC_SoftMute(DAC0, TRUE, TRUE);
-//	AudioDAC_SoftMute(DAC1, TRUE, TRUE);
-	uint32_t mute_count = 16;
-	static uint32_t mic_debug_cnt = 0;
-
-// ========== 主循环（单层）==========
-   while(1)
-   {
-		char c;
-		uint32_t frame_size_runtime;
-		run_upgrade_process();
-		// ---- 1. 从I2S1_RX读取数据到环形缓冲区 ----
-		uint16_t avail = AudioI2S_GetDataLen(I2S1_MODULE); // 返回样本数
-		if (avail > 0) {
-			while (avail > 0) {
-				uint32_t space = MCUCircular_GetSpaceLen(&i2s1_rx_circular); // 字节数
-				if (space == 0) break;
-				uint32_t max_samples = space / 2;
-				uint32_t get_samples = (avail < max_samples) ? avail : max_samples;
-				if (get_samples > 512) get_samples = 512;
-				int16_t tmp[512];
-				AudioI2S_GetData(I2S1_MODULE, tmp, get_samples);
-				MCUCircular_PutData(&i2s1_rx_circular, tmp, get_samples * sizeof(int16_t));
-				avail -= get_samples;
-			}
-		}
-
-		// ---- 2. 环形缓冲有足够数据时，取出给下行和AEC参考 ----
-		if (MCUCircular_GetDataLen(&i2s1_rx_circular) >= EFFECT_FRAME_SIZE_48K * sizeof(int16_t)) {
-			int16_t down_buf[EFFECT_FRAME_SIZE_48K];
-			MCUCircular_GetData(&i2s1_rx_circular, down_buf, EFFECT_FRAME_SIZE_48K * sizeof(int16_t));
-
-			const roboeffect_adapt_device_node *node = adapt_get_item(g_adapter, "SOURCE_I2S1_RX");
-			if (node) {
-				int16_t *dest = GET_SOURCE_BUFFER(context_memory, node);
-				memcpy(dest, down_buf, EFFECT_FRAME_SIZE_48K * sizeof(int16_t));
-			}
-
-			int16_t aec_ref[AEC_FRAME_SIZE_16K];
-			int32_t out_len = resampler_apply(&resampler_down, down_buf, aec_ref, EFFECT_FRAME_SIZE_48K);
-			if (out_len == AEC_FRAME_SIZE_16K) {
-				memcpy(aec_ref_buf, aec_ref, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-			}
-		}
-
-
-		// ---- 3. 读取ADC0麦克风（立体声转单声道） ----
-		if (AudioADC_DataLenGet(ADC0_MODULE) >= AEC_FRAME_SIZE_16K) {
-		    AudioADC_DataGet(ADC0_MODULE, PcmBuf1, AEC_FRAME_SIZE_16K);
-
-		    for (int i = 0; i < AEC_FRAME_SIZE_16K; i++) {
-		        mic_buf[i] = CLIP_16BIT((int)((int16_t*)PcmBuf1)[i*2] + (int)((int16_t*)PcmBuf1)[i*2+1]);
-		    }
-
-		    // 调试打印：每 100 帧打印一次前 4 个采样值
-		    if (++mic_debug_cnt % 100 == 0) {
-		        DBG("MIC samples: %d, %d, %d, %d\n",
-		            mic_buf[0], mic_buf[1], mic_buf[2], mic_buf[3]);
-		    }
-		} else {
-		    // 数据不足时填充静音，并间隔打印提示
-		    memset(mic_buf, 0, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-		    static uint32_t no_data_cnt = 0;
-		    if (++no_data_cnt % 1000 == 0) {
-		        DBG("ADC0 data not ready (len=%d)\n", AudioADC_DataLenGet(ADC0_MODULE));
-		    }
-		}
-		// ---- 4. MIC延时处理 ----
-		MCUCircular_PutData(&mic_delay_circular, mic_buf, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-		if (MCUCircular_GetDataLen(&mic_delay_circular) >= AEC_FRAME_SIZE_16K * sizeof(int16_t)) {
-			MCUCircular_GetData(&mic_delay_circular, mic_delayed, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-		} else {
-			memset(mic_delayed, 0, AEC_FRAME_SIZE_16K * sizeof(int16_t));
-		}
-
-		// ---- 5. AEC处理（分64样本块） ----
-		for (int i = 0; i < AEC_FRAME_SIZE_16K; i += 64) {
-			blue_aec_run(&aec_ctx, aec_ref_buf + i, mic_delayed + i, aec_out_buf + i);
-		}
-
-		// ---- 6. NS降噪（在16kHz域） ----
-
-
-		blue_ns_run16(persistent_ns_aec, aec_out_buf, aec_out_buf, ns_level);
-
-
-
-		// ---- 7. 升采样到48kHz，填充图的上行输入 ----
-		int32_t up_len = resampler_apply(&resampler_up, aec_out_buf, upsampled_aec, AEC_FRAME_SIZE_16K);
-		if (up_len == EFFECT_FRAME_SIZE_48K) {
-			const roboeffect_adapt_device_node *node = adapt_get_item(g_adapter, "SOURCE_AEC_NS_OUT");
-			if (node) {
-				int16_t *dest = GET_SOURCE_BUFFER(context_memory, node);
-				memcpy(dest, upsampled_aec, EFFECT_FRAME_SIZE_48K * sizeof(int16_t));
-				g_aec_ready = TRUE;
-			}
-		}
-
-		// ---- 8. 图处理 ----
-//		if (has_enough_data(g_adapter, EFFECT_FRAME_SIZE_48K)) {
-//			roboeffect_apply(context_memory);
-//			roboeffect_adapt_process_sink(context_memory, g_adapter, EFFECT_FRAME_SIZE_48K);
-//			g_aec_ready = FALSE;
-//		}
-
-
-	#ifdef ADC_KEY_SCAN
-	ADCKeyScanProcess();
-	#endif
-	// if(++counter > 512)
-	// {
-	// 	if(DMA_InterruptFlagGet(PERIPHERAL_ID_I2S0_RX, DMA_ERROR_INT) || DMA_InterruptFlagGet(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT))
-	// 	{
-	// 		hardware_pipe_reset(g_user_effect_list->sample_rate, 0);
-	// 		// DBG("reset\n");
-	// 	}
-	// 	counter = 0;
-	// }
-	frame_size_runtime = frame_size;
-	if(has_enough_data(g_adapter, frame_size_runtime))
-	{
-		uint64_t cycle_value;
-
-
-		roboeffect_adapt_process_source(context_memory, g_adapter, frame_size_runtime);
-
-
-		__nds32__mtsr(0, NDS32_SR_PFMC0);
-		__nds32__mtsr(1, NDS32_SR_PFM_CTL);
-
-		roboeffect_apply(context_memory);
-		__nds32__mtsr(0, NDS32_SR_PFM_CTL);
-		cycle_value = __nds32__mfsr(NDS32_SR_PFMC0);
-		cpu_mips = cycle_value * (uint64_t)g_user_effect_list->sample_rate / frame_size_runtime / 1000000;
-
-		// printf("*");
-
-		//un-mute and switch on AGC
-		if(mute_count > 0 && --mute_count == 0)
+		roboeffect_size = roboeffect_estimate_memory_size(g_user_effect_steps, g_user_effect_list, g_user_effect_parameters);
+		if(roboeffect_size >= 0)
+			DBG("current memory: %d\n", roboeffect_size);
+		else
 		{
-			AudioDAC_DigitalMute(DAC0, FALSE, FALSE);
-			AudioDAC_DigitalMute(DAC1, FALSE, FALSE);
-			AudioADC_AGCChannelSel(ADC0_MODULE, FALSE, FALSE);
+			DBG("Get context size failed, Error: %s\n", err_str[roboeffect_size+256]);
+			goto error;
+		}
+		
+		//find the biggest memory in effect list
+		for(uint32_t i = 0; i<g_user_effect_list->count; i++)
+		{
+			int32_t size;
+			size = roboeffect_estimate_effect_size(i + ROBOEFFECT_FIRST_ADDR, g_user_effect_list, g_user_effect_parameters);
+			// DBG("addr=0x%02X, size=%d\n", i + 0x80, size);
+			if(size > one_effect_size)
+				one_effect_size = size;
 		}
 
-		//process sink data(output)
-		roboeffect_adapt_process_sink(context_memory, g_adapter, frame_size_runtime);
+		roboeffect_size_max = roboeffect_free_space() - 16;//consume all remaining memory
+		// roboeffect_size_max = roboeffect_size;
+		DBG("Heap free space: %d\n", roboeffect_size_max);
+		
+		/**
+		 * malloc context memory
+		*/
+		if((context_memory = roboeffect_malloc(roboeffect_size_max)) == NULL)
+		{
+			DBG("context_memory is NULL\n");
+			goto error;
+		}
 
-		g_aec_ready = FALSE;
+		/**
+		 * initial roboeffect context memory
+		*/
+		if(ROBOEFFECT_ERROR_OK != (roboeffect_ret = roboeffect_init(context_memory, roboeffect_size_max, g_user_effect_steps, g_user_effect_list, g_user_effect_parameters)) )
+		{
+			DBG("roboeffect_init failed. %d\n", roboeffect_ret);
+			goto error;
+		}
+		robo_init_err = FALSE;
+		/**
+		 * get real-time frame size
+		*/
+		frame_size = g_user_effect_list->frame_size;
+		DBG("frame size = %d, free = %d, sr = %d\n", frame_size, roboeffect_get_free_memory_space(context_memory), g_user_effect_list->sample_rate);
+
+		need_update_status = 1;//tell acpworkbench to refresh effects data
+
+		//get source/sink buffer
+	#ifdef CFG_LOW_POWER_MODE
+		DMA_InterruptFunSet(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, InterruptAudio_CallBack);
+		DMA_InterruptEnable(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, 1);
+	#endif
+		
+		AudioDAC_SoftMute(DAC0, TRUE, TRUE);
+		AudioDAC_SoftMute(DAC1, TRUE, TRUE);
+		mute_count = 16;
+		//[ ] main while
+		while(1)
+		{
+			char c;
+			uint32_t frame_size_runtime;
+			run_upgrade_process();
+#ifdef ADC_KEY_SCAN
+			ADCKeyScanProcess();
+#endif
+			// if(++counter > 512)
+			// {
+			// 	if(DMA_InterruptFlagGet(PERIPHERAL_ID_I2S0_RX, DMA_ERROR_INT) || DMA_InterruptFlagGet(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT))
+			// 	{
+			// 		hardware_pipe_reset(g_user_effect_list->sample_rate, 0);
+			// 		// DBG("reset\n");
+			// 	}
+			// 	counter = 0;
+			// }
+			frame_size_runtime = frame_size;
+			if (I2S_SampleRateCheckInterruptGet(I2S1_MODULE)) {
+//			    DBG("I2S1 real SR = %u Hz\n", I2S_SampleRateGet(I2S1_MODULE));
+			    I2S_SampleRateCheckInterruptClr(I2S1_MODULE);
+			}
+
+			// ---- 从 I2S1_RX 硬件读取数据到环形缓冲 ----
+			uint16_t avail_frames = AudioI2S_GetDataLen(I2S1_MODULE);
+			static uint32_t dbg_cnt = 0;
+			if (++dbg_cnt % 5000 == 0) {
+			    if (DMA_InterruptFlagGet(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT)) {
+			        DBG("I2S1_RX DMA ERROR\n");
+			        DMA_InterruptFlagClear(PERIPHERAL_ID_I2S1_RX, DMA_ERROR_INT);
+			    }
+			}
+			while (avail_frames > 0) {
+			    uint32_t space = MCUCircular_GetSpaceLen(&i2s1_rx_circular);
+			    if (space == 0) break;
+			    uint32_t get = (avail_frames < space/4) ? avail_frames : space/4;
+			    if (get > 384) get = 384;
+			    AudioI2S_GetData(I2S1_MODULE, rx_48k_buf, get);
+			    MCUCircular_PutData(&i2s1_rx_circular, rx_48k_buf, get * 4);
+			    avail_frames -= get;
+			}
+
+			if(has_enough_data(g_adapter, frame_size_runtime))
+			{
+				uint32_t t0 = GetSysTick1MsCnt();
+
+				uint64_t cycle_value;
+
+				//process source data(input)
+				roboeffect_adapt_process_source(context_memory, g_adapter, frame_size_runtime);
+				uint32_t t1 = GetSysTick1MsCnt();
+				__nds32__mtsr(0, NDS32_SR_PFMC0);
+				__nds32__mtsr(1, NDS32_SR_PFM_CTL);
+
+				if(ROBOEFFECT_ERROR_OK != roboeffect_apply(context_memory))
+				{
+					uint8_t *buffer_ptr;
+					int32_t buffer_len, apply_ret;
+					apply_ret = roboeffect_get_frame_buffer_info(context_memory, &buffer_ptr, &buffer_len);
+					if(ROBOEFFECT_ERROR_OK == apply_ret)//engine execution error, clear all frame buffer
+					{
+						memset(buffer_ptr, 0x00, buffer_len);
+					}
+				}
+
+				__nds32__mtsr(0, NDS32_SR_PFM_CTL);
+				cycle_value = __nds32__mfsr(NDS32_SR_PFMC0);
+				cpu_mips = cycle_value * (uint64_t)g_user_effect_list->sample_rate / frame_size_runtime / 1000000;
+				 uint32_t t2 = GetSysTick1MsCnt();
+				// printf("*");
+				
+				//un-mute and switch on AGC
+				if(mute_count > 0 && --mute_count == 0)
+				{
+					AudioDAC_DigitalMute(DAC0, FALSE, FALSE);
+					AudioDAC_DigitalMute(DAC1, FALSE, FALSE);
+					AudioADC_AGCChannelSel(ADC0_MODULE, FALSE, FALSE);
+				}
+
+				//process sink data(output)
+				roboeffect_adapt_process_sink(context_memory, g_adapter, frame_size_runtime);
+				 uint32_t t3 = GetSysTick1MsCnt();
+				    // ★ 分段计时打印（只打最大值，避免刷屏）
+				    static uint32_t max_src = 0, max_apply = 0, max_sink = 0, max_all = 0;
+				    uint32_t dt_src   = t1 - t0;
+				    uint32_t dt_apply = t2 - t1;
+				    uint32_t dt_sink  = t3 - t2;
+				    uint32_t dt_all   = t3 - t0;
+
+				    if (dt_src   > max_src)   { max_src = dt_src;   DBG("MAX src   = %u ms\n", (unsigned int)max_src);   }
+				    if (dt_apply > max_apply) { max_apply = dt_apply; DBG("MAX apply = %u ms\n", (unsigned int)max_apply); }
+				    if (dt_sink  > max_sink)  { max_sink = dt_sink;  DBG("MAX sink  = %u ms\n", (unsigned int)max_sink);  }
+				    if (dt_all   > max_all)   { max_all = dt_all;    DBG("MAX total = %u ms\n", (unsigned int)max_all);   }
 #ifdef LED_SHOW
 				led_play();
 #endif
 				// printf(".");
-//				pcm_delaytime();
-			}
-			// 通信处理
-				if(connect_mode == MODE_HID)
-				{
-					OTG_DeviceRequestProcess();
-				}
-				else if(connect_mode == MODE_UART)
-				{
-					uart_data_entry();
-				}
-				else if(connect_mode == MODE_I2C)
-				{
-					iic_data_entry();
-				}
-
-				if(UART0_RecvByte(&c))
-				{
-					if(c == 'u')
-					{
-						DBG("jump to flashboot for upgrade.\n");
-						GPIO_PortBModeSet(GPIOB2, 5);
-						GPIO_PortBModeSet(GPIOB3, 5);
-						ota_upgrade_count = 6000 * 50;
-					}
-					else
-					{
-						demo_patameter_configure(c);
-					}
-				}
-
-		//		if(need_switch_mode)
-		//		{
-		//			printf("switch mode here\n");
-		//			need_switch_mode = FALSE;
-		//			// 切换模式时重新初始化 roboeffect
-		//			roboeffect_free(context_memory);
-		//			context_memory = NULL;
-		//			goto reinit;
-		//		}
-
-				if(AudioADC_AGCUpdateFlagGet(ADC0_MODULE))
-				{
-					AudioADC_AGCUpdateFlagClear(ADC0_MODULE);
-				}
-
-		#ifdef CFG_LOW_POWER_MODE
-				{
-					DMA_InterruptEnable(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, 1);
-					__nds32__standby_no_wake_grant();
-					__nds32__isb();
-				}
-		#endif
 			}
 
-
-
-		error:
-			DBG("An error occurred.\n");
-			while(1);
-			while(1)
+			//process communication
+			if(connect_mode == MODE_HID)
 			{
-				if(connect_mode == MODE_HID)
+				OTG_DeviceRequestProcess();
+			}
+			else if(connect_mode == MODE_UART)
+			{
+				uart_data_entry();
+			}
+			else if(connect_mode == MODE_I2C)
+			{
+				iic_data_entry();
+			}
+
+			if(UART0_RecvByte(&c))//example for force to upgrade by PC_Tools with flashboot
+			{
+				if(c == 'u')
 				{
-					OTG_DeviceRequestProcess();
+					DBG("jump to flashboot for upgrade.\n");
+					GPIO_PortBModeSet(GPIOB2, 5);//for flashboot usb link detect
+					GPIO_PortBModeSet(GPIOB3, 5);
+					
+					ota_upgrade_count = 6000 * 50;
 				}
-				else if(connect_mode == MODE_UART)
+				else
 				{
-					uart_data_entry();
-				}
-				else if(connect_mode == MODE_I2C)
-				{
-					iic_data_entry();
+					/**
+					 * demo to show how to configure parameters including enable/disable, group switch, etc.
+					*/
+					demo_patameter_configure(c);
 				}
 			}
 
-			return 0;
+			if(need_switch_mode)
+			{
+				printf("switch mode here\n");
+				need_switch_mode = FALSE;
+				break;
+			}
+
+			if(AudioADC_AGCUpdateFlagGet(ADC0_MODULE))
+			{
+				// printf("%d\n", AudioADC_AGCGainGet(ADC0_MODULE));
+				AudioADC_AGCUpdateFlagClear(ADC0_MODULE);
+			}
+
+#ifdef CFG_LOW_POWER_MODE
+			{
+				DMA_InterruptEnable(PERIPHERAL_ID_AUDIO_ADC0_RX, DMA_THRESHOLD_INT, 1);
+				__nds32__standby_no_wake_grant();
+				__nds32__isb();
+			}
+#endif
+		}
+
+		printf("finished?\n");
+		roboeffect_free(context_memory);
+		context_memory = NULL;
+	}
+
+error:
+	DBG("An error occurred.\n");
+	while(1);
+	while(1)
+	{
+		//process communication
+		if(connect_mode == MODE_HID)
+		{
+			OTG_DeviceRequestProcess();
+		}
+		else if(connect_mode == MODE_UART)
+		{
+			uart_data_entry();
+		}
+		else if(connect_mode == MODE_I2C)
+		{
+			iic_data_entry();
+		}
+	}
+
+	//Just make compiler happy ^_^
+	return 0;
 }
 
 void flash_write_rand(uint32_t write_addr, uint8_t *data, uint32_t size, uint8_t help_buffer[4096*2])
@@ -1578,7 +1756,7 @@ void flash_write_rand(uint32_t write_addr, uint8_t *data, uint32_t size, uint8_t
 
 	//erase
 	FlashErase(erase_begin, (erase_end - erase_begin));
-
+	
 	//restore head
 	SpiFlashWrite(erase_begin, help_buffer, write_addr - erase_begin, 100);
 
@@ -1589,6 +1767,11 @@ void flash_write_rand(uint32_t write_addr, uint8_t *data, uint32_t size, uint8_t
 	SpiFlashWrite(write_addr + size, help_buffer + 4096, erase_end - data_tail, 100);
 
 }
-
-
-
+__attribute__((section(".driver.isr"))) void Timer4Interrupt(void);
+void Timer4Interrupt(void)
+{
+//	static uint32_t cnt = 0;
+//	    if (++cnt % 50 == 0) DBG("T4 tick\n");   // 每秒一次
+    Timer_InterruptFlagClear(TIMER4, UPDATE_INTERRUPT_SRC);
+ //   PLL_Adjust_Loop();
+}

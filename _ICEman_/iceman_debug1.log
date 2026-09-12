@@ -1,27 +1,37 @@
-Info : 491 207 nds32.c:4037 nds32_reset_halt(): reset halt as init
-Info : 965 404 server.c:373 add_service(): Listening on port 9902 for gdb connections
-Info : 966 404 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
-Info : 967 404 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
-Info : 968 404 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
-Info : 969 404 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
-Info : 979 732 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
-Info : 980 732 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
-Info : 981 732 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
-Info : 982 733 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
-Info : 983 735 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
-Info : 984 735 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
-Info : 985 735 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
-Info : 986 735 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
-Info : 996 1000 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
-Info : 997 1000 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
-Info : 998 1001 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
-Info : 999 1001 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
-Info : 1003 1005 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
-Info : 1004 1005 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
-Info : 1005 1005 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
-Info : 1006 1005 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
-Info : 1022 1621 server.c:101 add_connection(): accepting 'burner' connection on tcp/9900
-EDM version 0x1012Info : 1056 1628 nds32_v3.c:780 nds32_update_edm_config(): nds32.cpu0: total hardware breakpoint 8 (simple breakpoint 0)
-Info : 1057 1629 nds32_v3.c:781 nds32_update_edm_config(): nds32.cpu0: total hardware watchpoint 8
-Info : 1092 1629 nds32.c:2969 nds32_login(): edm_passcode =>Current privilege level: 0
-Info : 1130 30899 server.c:601 server_loop(): dropped 'burner' connection
+Info : 491 189 nds32.c:4037 nds32_reset_halt(): reset halt as init
+Info : 965 396 server.c:373 add_service(): Listening on port 9902 for gdb connections
+Info : 972 683 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
+Info : 973 683 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
+Info : 974 683 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
+Info : 975 683 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
+Info : 979 688 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
+Info : 980 688 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
+Info : 981 688 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
+Info : 982 688 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
+Info : 986 691 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
+Info : 987 691 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
+Info : 988 691 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
+Info : 989 691 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
+Info : 996 980 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
+Info : 997 981 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
+Info : 998 981 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
+Info : 999 981 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
+Info : 1003 984 server.c:101 add_connection(): accepting 'telnet' connection on tcp/9901
+Info : 1004 985 telnet_server.c:209 telnet_new_connection(): Establising Telnet connection
+Info : 1005 985 telnet_server.c:237 telnet_new_connection(): Negotiate telnet options
+Info : 1006 986 telnet_server.c:247 telnet_new_connection(): telnet banner: Open On-Chip Debugger
+Info : 1022 1564 server.c:101 add_connection(): accepting 'burner' connection on tcp/9900
+EDM version 0x1012Info : 1056 1571 nds32_v3.c:780 nds32_update_edm_config(): nds32.cpu0: total hardware breakpoint 8 (simple breakpoint 0)
+Info : 1057 1571 nds32_v3.c:781 nds32_update_edm_config(): nds32.cpu0: total hardware watchpoint 8
+Info : 1092 1572 nds32.c:2969 nds32_login(): edm_passcode =>Current privilege level: 0
+Info : 1130 27780 server.c:601 server_loop(): dropped 'burner' connection
+Info : 28977 1048606 server.c:101 add_connection(): accepting 'burner' connection on tcp/9900
+EDM version 0x1012Info : 29011 1048613 nds32_v3.c:780 nds32_update_edm_config(): nds32.cpu0: total hardware breakpoint 8 (simple breakpoint 0)
+Info : 29012 1048614 nds32_v3.c:781 nds32_update_edm_config(): nds32.cpu0: total hardware watchpoint 8
+Info : 29047 1048614 nds32.c:2969 nds32_login(): edm_passcode =>Current privilege level: 0
+Info : 29124 1076296 server.c:601 server_loop(): dropped 'burner' connection
+Info : 35288 1289631 server.c:101 add_connection(): accepting 'burner' connection on tcp/9900
+EDM version 0x1012Info : 35322 1289645 nds32_v3.c:780 nds32_update_edm_config(): nds32.cpu0: total hardware breakpoint 8 (simple breakpoint 0)
+Info : 35323 1289645 nds32_v3.c:781 nds32_update_edm_config(): nds32.cpu0: total hardware watchpoint 8
+Info : 35358 1289646 nds32.c:2969 nds32_login(): edm_passcode =>Current privilege level: 0
+Info : 35435 1318562 server.c:601 server_loop(): dropped 'burner' connection

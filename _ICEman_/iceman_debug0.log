@@ -3,14 +3,14 @@ User : 101 1 command.c:546 command_print(): debug_level: 2
 Info : 132 1 transport.c:117 allow_transports(): only one transport option; autoselect 'aice_jtag'
 User : 156 1 command.c:546 command_print(): trst_and_srst separate srst_gates_jtag trst_push_pull srst_open_drain connect_deassert_srst
 User : 163 1 command.c:546 command_print(): adapter speed: RCLK - adaptive
-Info : 191 27 aice_apis.c:945 aice_get_info(): AICE version: hw_ver = 0x20002, fw_ver = 0x0, fpga_ver = 0x0
-Info : 193 28 aice_apis.c:949 aice_get_info(): AICE hardware features: 0xc0000005
-Info : 195 28 aice_apis.c:958 aice_get_info(): AICE batch data buffer size: 128 words
-Info : 215 197 aice_apis.c:2130 aice_open_device(): AICE initialization started
-Info : 225 201 aice_interface.c:313 aice_init(): AICE JTAG Interface ready
-Info : 237 203 core.c:1487 adapter_init(): RCLK (adaptive clock speed)
-Info : 423 205 nds32_cmd.c:953 handle_nds32_soft_reset_halt_command(): nds32.cpu0: soft-reset-halt: off
-Info : 435 205 nds32_cmd.c:879 handle_nds32_global_stop_command(): nds32.cpu0: global stop: off
-Info : 440 206 server.c:373 add_service(): Listening on port 6666 for tcl connections
-Info : 441 206 server.c:373 add_service(): Listening on port 9901 for telnet connections
-Info : 446 206 server.c:373 add_service(): Listening on port 9900 for burner connections
+Info : 191 26 aice_apis.c:945 aice_get_info(): AICE version: hw_ver = 0x20002, fw_ver = 0x0, fpga_ver = 0x0
+Info : 193 26 aice_apis.c:949 aice_get_info(): AICE hardware features: 0xc0000005
+Info : 195 26 aice_apis.c:958 aice_get_info(): AICE batch data buffer size: 128 words
+Info : 215 179 aice_apis.c:2130 aice_open_device(): AICE initialization started
+Info : 225 183 aice_interface.c:313 aice_init(): AICE JTAG Interface ready
+Info : 237 185 core.c:1487 adapter_init(): RCLK (adaptive clock speed)
+Info : 423 187 nds32_cmd.c:953 handle_nds32_soft_reset_halt_command(): nds32.cpu0: soft-reset-halt: off
+Info : 435 187 nds32_cmd.c:879 handle_nds32_global_stop_command(): nds32.cpu0: global stop: off
+Info : 440 189 server.c:373 add_service(): Listening on port 6666 for tcl connections
+Info : 441 189 server.c:373 add_service(): Listening on port 9901 for telnet connections
+Info : 446 189 server.c:373 add_service(): Listening on port 9900 for burner connections

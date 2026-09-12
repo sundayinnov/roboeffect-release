@@ -1,9 +1,9 @@
 /***************************************************
  * @file     user_effect_flow_demo.h  
  * @brief   auto generated  
- * @author  ACPWorkbench: 5.9.0
+ * @author  ACPWorkbench: 5.9.2
  * @version V1.2.0 
- * @Created 2026-09-08T09:33:53 
+ * @Created 2026-09-12T23:34:32 
 
  * @copy; Shanghai Mountain View Silicon Technology Co.,Ltd. All rights reserved.
  ***************************************************/
@@ -20,20 +20,26 @@
 
 typedef enum _DEMO_roboeffect_io_enum
 {
-    DEMO_SOURCE_AEC_NS_OUT,
-    DEMO_SOURCE_I2S1_RX,
+    DEMO_SOURCE_AP82_MIC,
+    DEMO_SOURCE_I2S1_RX_BUF,
 
-    DEMO_SINK_I2S1_TX,
     DEMO_SINK_USB_OUT,
-    DEMO_SINK_I2S0_TX,
+    DEMO_SINK_I2S1_TX_BUF,
+    DEMO_SINK_AP82_DAC0,
 } DEMO_roboeffect_io_enum;
 
 
 typedef enum _DEMO_roboeffect_effect_list_enum{
 
-    DEMO_gain_control0_ADDR = 0x81,
-    DEMO_upmix_1to2_0_ADDR = 0x82,
-    DEMO_gain_control1_ADDR = 0x83,
+    DEMO_downmix_2to1_0_ADDR = 0x81,
+    DEMO_filter_fir0_ADDR = 0x82,
+    DEMO_gain_control0_ADDR = 0x83,
+    DEMO_pcm_delay_ms0_ADDR = 0x84,
+    DEMO_aec0_ADDR = 0x85,
+    DEMO_noise_suppressor_blue0_ADDR = 0x86,
+    DEMO_gain_control1_ADDR = 0x87,
+    DEMO_upmix_1to2_1_ADDR = 0x88,
+    DEMO_upmix_1to2_0_ADDR = 0x89,
     DEMO_COUNT_ADDR,
 
 } DEMO_roboeffect_effect_list_enum;
